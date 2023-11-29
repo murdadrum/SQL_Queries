@@ -32,3 +32,5 @@ SELECT FamilyCopy;
 SHOW Tables;
 
 SELECT * FROM MembersCopy;
+
+-- test sync
