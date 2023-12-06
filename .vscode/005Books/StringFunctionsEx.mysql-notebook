@@ -1,0 +1,1535 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\n// reverse and uppercase the sentence\nSELECT REVERSE('Why does my cat look at me with such hatred?');\nSHOW DATABASES;\nUSE Bookshop;\nshow TABLES;\nSELECT DATABASE();\nSELECT REPLACE(title, ' ', '-->') AS TITLE FROM books;\nSELECT author_lname AS FORWARDS, REVERSE(author_lname) AS BACKWARDS FROM books;\nSELECT CONCAT (UPPER(author_fname), (' '), (author_lname)) AS 'full name in caps' FROM books;\nSELECT * FROM books;\nSELECT CONCAT(title, ' was released ', released_year) AS blurb FROM books;\nSELECT title, CHAR_LENGTH(title) AS 'charcter count' FROM books;\nSELECT * FROM books;\nSELECT\n    CONCAT(SUBSTRING(title, 1, 10), '...') AS short_title,\n    CONCAT(author_lname, ',', author_fname) AS author,\n    CONCAT(stock_quantity, ' in stock') AS quantity\nFROM\n    books;\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 18,
+                    "column": 52
+                },
+                "position": {
+                    "lineNumber": 18,
+                    "column": 52
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 15,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 51
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 104,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "javascript",
+                "currentHeight": 36,
+                "statements": []
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "853a1f06-0af3-4a71-81e9-397b5535f410"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 63
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "853a1f06-0af3-4a71-81e9-397b5535f410",
+                    "rows": [
+                        {
+                            "0": "?dertah hcus htiw em ta kool tac ym seod yhW"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "REVERSE('Why does my cat look at me with such hatred?')",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.027ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT REVERSE('Why does my cat look at me with such hatred?')"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1be5f0fb-1e17-4447-94e7-c30bf90b5297"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "1be5f0fb-1e17-4447-94e7-c30bf90b5297",
+                    "rows": [
+                        {
+                            "0": "Bookshop"
+                        },
+                        {
+                            "0": "GUADS"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "soap_store"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.513ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "62cfb087-6d24-49ea-bc69-6929ab53ec68",
+                            "content": "OK, 0 records retrieved in 12.785ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "72514f4d-bad1-4336-93b8-7e2a9a765d28"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "72514f4d-bad1-4336-93b8-7e2a9a765d28",
+                    "rows": [
+                        {
+                            "0": "books"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_bookshop",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.864ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1cfc9ff9-5f79-430b-dd44-a3d88ffa7e45"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "1cfc9ff9-5f79-430b-dd44-a3d88ffa7e45",
+                    "rows": [
+                        {
+                            "0": "bookshop"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATABASE()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.689ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DATABASE()"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4fc3d0e9-aa9d-4592-99a6-9a8588192631"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "4fc3d0e9-aa9d-4592-99a6-9a8588192631",
+                    "rows": [
+                        {
+                            "0": "The-->Namesake"
+                        },
+                        {
+                            "0": "Norse-->Mythology"
+                        },
+                        {
+                            "0": "American-->Gods"
+                        },
+                        {
+                            "0": "Interpreter-->of-->Maladies"
+                        },
+                        {
+                            "0": "A-->Hologram-->for-->the-->King:-->A-->Novel"
+                        },
+                        {
+                            "0": "The-->Circle"
+                        },
+                        {
+                            "0": "The-->Amazing-->Adventures-->of-->Kavalier-->&-->Clay"
+                        },
+                        {
+                            "0": "Just-->Kids"
+                        },
+                        {
+                            "0": "A-->Heartbreaking-->Work-->of-->Staggering-->Genius"
+                        },
+                        {
+                            "0": "Coraline"
+                        },
+                        {
+                            "0": "What-->We-->Talk-->About-->When-->We-->Talk-->About-->Love:-->Stories"
+                        },
+                        {
+                            "0": "Where-->I'm-->Calling-->From:-->Selected-->Stories"
+                        },
+                        {
+                            "0": "White-->Noise"
+                        },
+                        {
+                            "0": "Cannery-->Row"
+                        },
+                        {
+                            "0": "Oblivion:-->Stories"
+                        },
+                        {
+                            "0": "Consider-->the-->Lobster"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "TITLE",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.715ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT REPLACE(title, ' ', '-->') AS TITLE FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "20ff402d-dace-471f-8966-766990450036"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 79
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "20ff402d-dace-471f-8966-766990450036",
+                    "rows": [
+                        {
+                            "0": "Lahiri",
+                            "1": "irihaL"
+                        },
+                        {
+                            "0": "Gaiman",
+                            "1": "namiaG"
+                        },
+                        {
+                            "0": "Gaiman",
+                            "1": "namiaG"
+                        },
+                        {
+                            "0": "Lahiri",
+                            "1": "irihaL"
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": "sreggE"
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": "sreggE"
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": "nobahC"
+                        },
+                        {
+                            "0": "Smith",
+                            "1": "htimS"
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": "sreggE"
+                        },
+                        {
+                            "0": "Gaiman",
+                            "1": "namiaG"
+                        },
+                        {
+                            "0": "Carver",
+                            "1": "revraC"
+                        },
+                        {
+                            "0": "Carver",
+                            "1": "revraC"
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": "olliLeD"
+                        },
+                        {
+                            "0": "Steinbeck",
+                            "1": "kcebnietS"
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": "ecallaW retsoF"
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": "ecallaW retsoF"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "FORWARDS",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "BACKWARDS",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 3.808ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT author_lname AS FORWARDS, REVERSE(author_lname) AS BACKWARDS FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6b49c0f3-08f9-48f1-e5eb-567e44f1b272"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 93
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "6b49c0f3-08f9-48f1-e5eb-567e44f1b272",
+                    "rows": [
+                        {
+                            "0": "JHUMPA Lahiri"
+                        },
+                        {
+                            "0": "NEIL Gaiman"
+                        },
+                        {
+                            "0": "NEIL Gaiman"
+                        },
+                        {
+                            "0": "JHUMPA Lahiri"
+                        },
+                        {
+                            "0": "DAVE Eggers"
+                        },
+                        {
+                            "0": "DAVE Eggers"
+                        },
+                        {
+                            "0": "MICHAEL Chabon"
+                        },
+                        {
+                            "0": "PATTI Smith"
+                        },
+                        {
+                            "0": "DAVE Eggers"
+                        },
+                        {
+                            "0": "NEIL Gaiman"
+                        },
+                        {
+                            "0": "RAYMOND Carver"
+                        },
+                        {
+                            "0": "RAYMOND Carver"
+                        },
+                        {
+                            "0": "DON DeLillo"
+                        },
+                        {
+                            "0": "JOHN Steinbeck"
+                        },
+                        {
+                            "0": "DAVID Foster Wallace"
+                        },
+                        {
+                            "0": "DAVID Foster Wallace"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "full name in caps",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.789ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT CONCAT (UPPER(author_fname), (' '), (author_lname)) AS 'full name in caps' FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6c055d98-2501-4e85-d468-49bd7d7edb5a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "6c055d98-2501-4e85-d468-49bd7d7edb5a",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "The Namesake",
+                            "2": "Jhumpa",
+                            "3": "Lahiri",
+                            "4": 2003,
+                            "5": 32,
+                            "6": 291
+                        },
+                        {
+                            "0": 2,
+                            "1": "Norse Mythology",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2016,
+                            "5": 43,
+                            "6": 304
+                        },
+                        {
+                            "0": 3,
+                            "1": "American Gods",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2001,
+                            "5": 12,
+                            "6": 465
+                        },
+                        {
+                            "0": 4,
+                            "1": "Interpreter of Maladies",
+                            "2": "Jhumpa",
+                            "3": "Lahiri",
+                            "4": 1996,
+                            "5": 97,
+                            "6": 198
+                        },
+                        {
+                            "0": 5,
+                            "1": "A Hologram for the King: A Novel",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2012,
+                            "5": 154,
+                            "6": 352
+                        },
+                        {
+                            "0": 6,
+                            "1": "The Circle",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2013,
+                            "5": 26,
+                            "6": 504
+                        },
+                        {
+                            "0": 7,
+                            "1": "The Amazing Adventures of Kavalier & Clay",
+                            "2": "Michael",
+                            "3": "Chabon",
+                            "4": 2000,
+                            "5": 68,
+                            "6": 634
+                        },
+                        {
+                            "0": 8,
+                            "1": "Just Kids",
+                            "2": "Patti",
+                            "3": "Smith",
+                            "4": 2010,
+                            "5": 55,
+                            "6": 304
+                        },
+                        {
+                            "0": 9,
+                            "1": "A Heartbreaking Work of Staggering Genius",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2001,
+                            "5": 104,
+                            "6": 437
+                        },
+                        {
+                            "0": 10,
+                            "1": "Coraline",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2003,
+                            "5": 100,
+                            "6": 208
+                        },
+                        {
+                            "0": 11,
+                            "1": "What We Talk About When We Talk About Love: Stories",
+                            "2": "Raymond",
+                            "3": "Carver",
+                            "4": 1981,
+                            "5": 23,
+                            "6": 176
+                        },
+                        {
+                            "0": 12,
+                            "1": "Where I'm Calling From: Selected Stories",
+                            "2": "Raymond",
+                            "3": "Carver",
+                            "4": 1989,
+                            "5": 12,
+                            "6": 526
+                        },
+                        {
+                            "0": 13,
+                            "1": "White Noise",
+                            "2": "Don",
+                            "3": "DeLillo",
+                            "4": 1985,
+                            "5": 49,
+                            "6": 320
+                        },
+                        {
+                            "0": 14,
+                            "1": "Cannery Row",
+                            "2": "John",
+                            "3": "Steinbeck",
+                            "4": 1945,
+                            "5": 95,
+                            "6": 181
+                        },
+                        {
+                            "0": 15,
+                            "1": "Oblivion: Stories",
+                            "2": "David",
+                            "3": "Foster Wallace",
+                            "4": 2004,
+                            "5": 172,
+                            "6": 329
+                        },
+                        {
+                            "0": 16,
+                            "1": "Consider the Lobster",
+                            "2": "David",
+                            "3": "Foster Wallace",
+                            "4": 2005,
+                            "5": 92,
+                            "6": 343
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "book_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "author_fname",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "author_lname",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "released_year",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "stock_quantity",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "pages",
+                            "field": "6",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.705ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f4031e7f-e999-491d-b6dc-271affcf889a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 74
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "f4031e7f-e999-491d-b6dc-271affcf889a",
+                    "rows": [
+                        {
+                            "0": "The Namesake was released 2003"
+                        },
+                        {
+                            "0": "Norse Mythology was released 2016"
+                        },
+                        {
+                            "0": "American Gods was released 2001"
+                        },
+                        {
+                            "0": "Interpreter of Maladies was released 1996"
+                        },
+                        {
+                            "0": "A Hologram for the King: A Novel was released 2012"
+                        },
+                        {
+                            "0": "The Circle was released 2013"
+                        },
+                        {
+                            "0": "The Amazing Adventures of Kavalier & Clay was released 2000"
+                        },
+                        {
+                            "0": "Just Kids was released 2010"
+                        },
+                        {
+                            "0": "A Heartbreaking Work of Staggering Genius was released 2001"
+                        },
+                        {
+                            "0": "Coraline was released 2003"
+                        },
+                        {
+                            "0": "What We Talk About When We Talk About Love: Stories was released 1981"
+                        },
+                        {
+                            "0": "Where I'm Calling From: Selected Stories was released 1989"
+                        },
+                        {
+                            "0": "White Noise was released 1985"
+                        },
+                        {
+                            "0": "Cannery Row was released 1945"
+                        },
+                        {
+                            "0": "Oblivion: Stories was released 2004"
+                        },
+                        {
+                            "0": "Consider the Lobster was released 2005"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "blurb",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.674ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT CONCAT(title, ' was released ', released_year) AS blurb FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5c83fe4b-eaed-41bc-aa77-2d9c2b680a20"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 64
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "5c83fe4b-eaed-41bc-aa77-2d9c2b680a20",
+                    "rows": [
+                        {
+                            "0": "The Namesake",
+                            "1": 12
+                        },
+                        {
+                            "0": "Norse Mythology",
+                            "1": 15
+                        },
+                        {
+                            "0": "American Gods",
+                            "1": 13
+                        },
+                        {
+                            "0": "Interpreter of Maladies",
+                            "1": 23
+                        },
+                        {
+                            "0": "A Hologram for the King: A Novel",
+                            "1": 32
+                        },
+                        {
+                            "0": "The Circle",
+                            "1": 10
+                        },
+                        {
+                            "0": "The Amazing Adventures of Kavalier & Clay",
+                            "1": 41
+                        },
+                        {
+                            "0": "Just Kids",
+                            "1": 9
+                        },
+                        {
+                            "0": "A Heartbreaking Work of Staggering Genius",
+                            "1": 41
+                        },
+                        {
+                            "0": "Coraline",
+                            "1": 8
+                        },
+                        {
+                            "0": "What We Talk About When We Talk About Love: Stories",
+                            "1": 51
+                        },
+                        {
+                            "0": "Where I'm Calling From: Selected Stories",
+                            "1": 40
+                        },
+                        {
+                            "0": "White Noise",
+                            "1": 11
+                        },
+                        {
+                            "0": "Cannery Row",
+                            "1": 11
+                        },
+                        {
+                            "0": "Oblivion: Stories",
+                            "1": 17
+                        },
+                        {
+                            "0": "Consider the Lobster",
+                            "1": 20
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "charcter count",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.972ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT title, CHAR_LENGTH(title) AS 'charcter count' FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2c745087-8ba2-4d91-f33f-ab9f960f5a90"
+                    ]
+                },
+                "currentHeight": 352,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "2c745087-8ba2-4d91-f33f-ab9f960f5a90",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "The Namesake",
+                            "2": "Jhumpa",
+                            "3": "Lahiri",
+                            "4": 2003,
+                            "5": 32,
+                            "6": 291
+                        },
+                        {
+                            "0": 2,
+                            "1": "Norse Mythology",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2016,
+                            "5": 43,
+                            "6": 304
+                        },
+                        {
+                            "0": 3,
+                            "1": "American Gods",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2001,
+                            "5": 12,
+                            "6": 465
+                        },
+                        {
+                            "0": 4,
+                            "1": "Interpreter of Maladies",
+                            "2": "Jhumpa",
+                            "3": "Lahiri",
+                            "4": 1996,
+                            "5": 97,
+                            "6": 198
+                        },
+                        {
+                            "0": 5,
+                            "1": "A Hologram for the King: A Novel",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2012,
+                            "5": 154,
+                            "6": 352
+                        },
+                        {
+                            "0": 6,
+                            "1": "The Circle",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2013,
+                            "5": 26,
+                            "6": 504
+                        },
+                        {
+                            "0": 7,
+                            "1": "The Amazing Adventures of Kavalier & Clay",
+                            "2": "Michael",
+                            "3": "Chabon",
+                            "4": 2000,
+                            "5": 68,
+                            "6": 634
+                        },
+                        {
+                            "0": 8,
+                            "1": "Just Kids",
+                            "2": "Patti",
+                            "3": "Smith",
+                            "4": 2010,
+                            "5": 55,
+                            "6": 304
+                        },
+                        {
+                            "0": 9,
+                            "1": "A Heartbreaking Work of Staggering Genius",
+                            "2": "Dave",
+                            "3": "Eggers",
+                            "4": 2001,
+                            "5": 104,
+                            "6": 437
+                        },
+                        {
+                            "0": 10,
+                            "1": "Coraline",
+                            "2": "Neil",
+                            "3": "Gaiman",
+                            "4": 2003,
+                            "5": 100,
+                            "6": 208
+                        },
+                        {
+                            "0": 11,
+                            "1": "What We Talk About When We Talk About Love: Stories",
+                            "2": "Raymond",
+                            "3": "Carver",
+                            "4": 1981,
+                            "5": 23,
+                            "6": 176
+                        },
+                        {
+                            "0": 12,
+                            "1": "Where I'm Calling From: Selected Stories",
+                            "2": "Raymond",
+                            "3": "Carver",
+                            "4": 1989,
+                            "5": 12,
+                            "6": 526
+                        },
+                        {
+                            "0": 13,
+                            "1": "White Noise",
+                            "2": "Don",
+                            "3": "DeLillo",
+                            "4": 1985,
+                            "5": 49,
+                            "6": 320
+                        },
+                        {
+                            "0": 14,
+                            "1": "Cannery Row",
+                            "2": "John",
+                            "3": "Steinbeck",
+                            "4": 1945,
+                            "5": 95,
+                            "6": 181
+                        },
+                        {
+                            "0": 15,
+                            "1": "Oblivion: Stories",
+                            "2": "David",
+                            "3": "Foster Wallace",
+                            "4": 2004,
+                            "5": 172,
+                            "6": 329
+                        },
+                        {
+                            "0": 16,
+                            "1": "Consider the Lobster",
+                            "2": "David",
+                            "3": "Foster Wallace",
+                            "4": 2005,
+                            "5": 92,
+                            "6": 343
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "book_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "title",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "author_fname",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "author_lname",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "released_year",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "stock_quantity",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "pages",
+                            "field": "6",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.729ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 20,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a11b3057-a92f-41d1-af8c-4834815c94c1"
+                    ]
+                },
+                "currentHeight": 352,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 188
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
+                    "resultId": "a11b3057-a92f-41d1-af8c-4834815c94c1",
+                    "rows": [
+                        {
+                            "0": "The Namesa...",
+                            "1": "Lahiri,Jhumpa",
+                            "2": "32 in stock"
+                        },
+                        {
+                            "0": "Norse Myth...",
+                            "1": "Gaiman,Neil",
+                            "2": "43 in stock"
+                        },
+                        {
+                            "0": "American G...",
+                            "1": "Gaiman,Neil",
+                            "2": "12 in stock"
+                        },
+                        {
+                            "0": "Interprete...",
+                            "1": "Lahiri,Jhumpa",
+                            "2": "97 in stock"
+                        },
+                        {
+                            "0": "A Hologram...",
+                            "1": "Eggers,Dave",
+                            "2": "154 in stock"
+                        },
+                        {
+                            "0": "The Circle...",
+                            "1": "Eggers,Dave",
+                            "2": "26 in stock"
+                        },
+                        {
+                            "0": "The Amazin...",
+                            "1": "Chabon,Michael",
+                            "2": "68 in stock"
+                        },
+                        {
+                            "0": "Just Kids...",
+                            "1": "Smith,Patti",
+                            "2": "55 in stock"
+                        },
+                        {
+                            "0": "A Heartbre...",
+                            "1": "Eggers,Dave",
+                            "2": "104 in stock"
+                        },
+                        {
+                            "0": "Coraline...",
+                            "1": "Gaiman,Neil",
+                            "2": "100 in stock"
+                        },
+                        {
+                            "0": "What We Ta...",
+                            "1": "Carver,Raymond",
+                            "2": "23 in stock"
+                        },
+                        {
+                            "0": "Where I'm ...",
+                            "1": "Carver,Raymond",
+                            "2": "12 in stock"
+                        },
+                        {
+                            "0": "White Nois...",
+                            "1": "DeLillo,Don",
+                            "2": "49 in stock"
+                        },
+                        {
+                            "0": "Cannery Ro...",
+                            "1": "Steinbeck,John",
+                            "2": "95 in stock"
+                        },
+                        {
+                            "0": "Oblivion: ...",
+                            "1": "Foster Wallace,David",
+                            "2": "172 in stock"
+                        },
+                        {
+                            "0": "Consider t...",
+                            "1": "Foster Wallace,David",
+                            "2": "92 in stock"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "short_title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "author",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "quantity",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 1.034ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n    CONCAT(SUBSTRING(title, 1, 10), '...') AS short_title,\n    CONCAT(author_lname, ',', author_fname) AS author,\n      CONCAT(stock_quantity, ' in stock') AS quantity\nFROM\n    books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 21,
+                "end": 21,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
