@@ -1,0 +1,787 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nSHOW DATABASES;\n\nUSE Shirts;\nSHOW TABLES;\nSELECT DATABASE();\nSHOW TABLE STATUS;\nALTER TABLE Shirts\nMODIFY COLUMN shirtID INT AUTO_INCREMENT;\nALTER TABLE Shirts\nMODIFY COLUMN shirtID INT AUTO_INCREMENT PRIMARY KEY;\nSHOW TABLES;\n\nINSERT INTO Shirts (article, color, size, lastWorn)\nVALUES ('t-shirt', 'blue', 'M', 10),\n('polo', 'green', 'M', 20);\nSHOW TABLES;\nSELECT * FROM Shirts;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 19,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 19,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 12,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 1
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f8569f78-3095-4ba8-e780-8ac785d55ac1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 15,
+                            "length": 1
+                        },
+                        "contentStart": 14,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "f8569f78-3095-4ba8-e780-8ac785d55ac1",
+                    "rows": [
+                        {
+                            "0": "GUADS"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "Shirts"
+                        },
+                        {
+                            "0": "soap_store"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 2.16ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c4abacc9-4bc3-4f33-cdac-6642b2c68502",
+                            "content": "OK, 0 records retrieved in 0.74ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "effa0718-5ba3-43e8-82b1-8baca6a7c46b"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "effa0718-5ba3-43e8-82b1-8baca6a7c46b",
+                    "rows": [
+                        {
+                            "0": "Shirts"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_shirts",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.819ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "6bde0784-8f0d-421d-c5c1-d1cbd79f9b70"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "6bde0784-8f0d-421d-c5c1-d1cbd79f9b70",
+                    "rows": [
+                        {
+                            "0": "shirts"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATABASE()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.876ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DATABASE()"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ca680cf8-8720-480c-bd18-14ddf9bb8703"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "ca680cf8-8720-480c-bd18-14ddf9bb8703",
+                    "rows": [
+                        {
+                            "0": "Shirts",
+                            "1": "InnoDB",
+                            "2": 10,
+                            "3": "Dynamic",
+                            "4": 0,
+                            "5": 0,
+                            "6": 16384,
+                            "7": 0,
+                            "8": 0,
+                            "9": 0,
+                            "10": null,
+                            "11": "2023-12-05 23:44:27",
+                            "12": null,
+                            "13": null,
+                            "14": "utf8mb4_0900_ai_ci",
+                            "15": null,
+                            "16": "",
+                            "17": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Name",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Engine",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Version",
+                            "field": "2",
+                            "dataType": {
+                                "type": 1
+                            }
+                        },
+                        {
+                            "title": "Row_format",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Rows",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Avg_row_length",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Data_length",
+                            "field": "6",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Max_data_length",
+                            "field": "7",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Index_length",
+                            "field": "8",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Data_free",
+                            "field": "9",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Auto_increment",
+                            "field": "10",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Create_time",
+                            "field": "11",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "Update_time",
+                            "field": "12",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "Check_time",
+                            "field": "13",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "Collation",
+                            "field": "14",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Checksum",
+                            "field": "15",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "Create_options",
+                            "field": "16",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Comment",
+                            "field": "17",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 4.173ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLE STATUS"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 9,
+                "language": "mysql",
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 60
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "368754b3-0693-4075-e149-17e58f98a533",
+                            "content": "OK, 0 records retrieved in 28.057ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 72
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5960b0dd-3c19-41c9-f669-6302826fb896"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 12,
+                            "length": 1
+                        },
+                        "contentStart": 11,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "5960b0dd-3c19-41c9-f669-6302826fb896",
+                    "rows": [
+                        {
+                            "0": "Shirts"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_shirts",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.488ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c2057f04-6077-440c-c096-e3cb4b9b87c7",
+                            "content": "OK, 2 rows affected in 5.36ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 116
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "726f8ea2-7b0d-4380-c8d5-97309bd4f844"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "726f8ea2-7b0d-4380-c8d5-97309bd4f844",
+                    "rows": [
+                        {
+                            "0": "Shirts"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_shirts",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 16.455ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c0bd8486-f7f5-4ac3-8ea9-60396810f802"
+                    ]
+                },
+                "currentHeight": 106,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a72f497b-73c5-48c7-d481-c631bdc8e71a",
+                    "resultId": "c0bd8486-f7f5-4ac3-8ea9-60396810f802",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "M",
+                            "4": 20
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "shirtID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 0.652ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 19,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
