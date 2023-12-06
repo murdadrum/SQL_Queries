@@ -1,0 +1,1606 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "CREATE DATABASE Shirts;\nUSE Shirts;\nSELECT DATABASE();\nCREATE TABLE Shirts (\n    ID INT AUTO_INCREMENT PRIMARY KEY,\n    article VARCHAR(50),\n    color VARCHAR(50),\n    size VARCHAR(10),\n    lastWorn INT\n    );\nINSERT INTO Shirts (article, color, size, lastWorn)\n    VALUES ('t-shirt', 'blue', 'M', 10),\n    ('polo', 'green', 'M', 20),\n    ('hoodie', 'grey', 'M', 5);\nSELECT * FROM Shirts;\nINSERT INTO Shirts (article, color, size, lastWorn)\n    VALUES ('polo', 'purple', 'M', 50);\nSELECT article, color FROM Shirts;\nINSERT INTO Shirts (article, color, size, lastWorn)\n    VALUES ('t-shirt', 'white', 'S', 10),\n('t-shirt', 'green', 'S', 200),\n('polo shirt', 'black', 'M', 10),\n('tank top', 'blue', 'S', 50),\n('t-shirt', 'pink', 'S', 0),\n('polo shirt', 'red', 'M', 5),\n('tank top', 'white', 'S', 200),\n('tank top', 'blue', 'M', 15);\nSELECT article, color FROM Shirts;\n\nUPDATE Shirts SET size='L' WHERE article='polo';\nSELECT * FROM Shirts;\nUPDATE Shirts SET lastWorn=0 WHERE lastWorn=15;\nSELECT * FROM Shirts;\nUPDATE Shirts SET size='L' WHERE article='polo';\nDELETE FROM Shirts WHERE lastWorn>60;\nSELECT * FROM Shirts;\nSELECT article, color, size, lastWorn FROM Shirts WHERE size='M';\nUPDATE Shirts \nSET \n    color = 'off white',\n    size = 'XS'\nWHERE\n    color = 'white';\nSELECT * FROM Shirts WHERE lastWorn<10;\nDELETE FROM Shirts WHERE lastWorn<10;\nSELECT * FROM Shirts;\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 47,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 47,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 41,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -17
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "3b38242d-38c6-434f-a27d-56d9cee1a1d0",
+                            "content": "OK, 1 row affected in 1.912ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "184f34c8-a2f2-4e92-baf9-811d9805131c",
+                            "content": "OK, 0 records retrieved in 0.966ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0ce369f9-d6a6-4bd5-ff6b-b2ad5c8ce091"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "0ce369f9-d6a6-4bd5-ff6b-b2ad5c8ce091",
+                    "rows": [
+                        {
+                            "0": "shirts"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATABASE()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.571ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DATABASE()"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f6131df1-7f93-4fc4-e229-be0125361c44",
+                            "content": "OK, 0 records retrieved in 18.394ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 154
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a60fde5b-3035-4402-f786-86f8ab528aef",
+                            "content": "OK, 3 rows affected in 2.66ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 156
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c322ca47-234f-4d7c-fabe-1df5a30bff0d"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "c322ca47-234f-4d7c-fabe-1df5a30bff0d",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "M",
+                            "4": 20
+                        },
+                        {
+                            "0": 3,
+                            "1": "hoodie",
+                            "2": "grey",
+                            "3": "M",
+                            "4": 5
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.559ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "0b0f178f-047c-4fc4-b202-0fadb592c3ff",
+                            "content": "OK, 1 row affected in 2.196ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 91
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a6b0bf94-3493-4c68-e416-e148761f2092"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 34,
+                            "length": 0
+                        },
+                        "contentStart": 33,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "a6b0bf94-3493-4c68-e416-e148761f2092",
+                    "rows": [
+                        {
+                            "0": "t-shirt",
+                            "1": "blue"
+                        },
+                        {
+                            "0": "polo",
+                            "1": "green"
+                        },
+                        {
+                            "0": "hoodie",
+                            "1": "grey"
+                        },
+                        {
+                            "0": "polo",
+                            "1": "purple"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "article",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.708ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT article, color FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ed672661-3c4e-4d20-faed-98dbb93b43fd",
+                            "content": "OK, 8 rows affected in 2.492ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 314
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "19367dc3-6865-45a9-ee8a-931dd3308196"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 34
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "19367dc3-6865-45a9-ee8a-931dd3308196",
+                    "rows": [
+                        {
+                            "0": "t-shirt",
+                            "1": "blue"
+                        },
+                        {
+                            "0": "polo",
+                            "1": "green"
+                        },
+                        {
+                            "0": "hoodie",
+                            "1": "grey"
+                        },
+                        {
+                            "0": "polo",
+                            "1": "purple"
+                        },
+                        {
+                            "0": "t-shirt",
+                            "1": "white"
+                        },
+                        {
+                            "0": "t-shirt",
+                            "1": "green"
+                        },
+                        {
+                            "0": "polo shirt",
+                            "1": "black"
+                        },
+                        {
+                            "0": "tank top",
+                            "1": "blue"
+                        },
+                        {
+                            "0": "t-shirt",
+                            "1": "pink"
+                        },
+                        {
+                            "0": "polo shirt",
+                            "1": "red"
+                        },
+                        {
+                            "0": "tank top",
+                            "1": "white"
+                        },
+                        {
+                            "0": "tank top",
+                            "1": "blue"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "article",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 0.666ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT article, color FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1241): ClassicSession.run_sql: Operand should contain 1 column(s)",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 30,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "03532298-f848-41f5-db28-9b6d412cf83c",
+                            "content": "OK, 2 rows affected in 6.255ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 48
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 31,
+                "end": 31,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "38845f78-1840-4466-d9ba-46f5987ac50c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "38845f78-1840-4466-d9ba-46f5987ac50c",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "L",
+                            "4": 20
+                        },
+                        {
+                            "0": 3,
+                            "1": "hoodie",
+                            "2": "grey",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 4,
+                            "1": "polo",
+                            "2": "purple",
+                            "3": "L",
+                            "4": 50
+                        },
+                        {
+                            "0": 5,
+                            "1": "t-shirt",
+                            "2": "white",
+                            "3": "S",
+                            "4": 10
+                        },
+                        {
+                            "0": 6,
+                            "1": "t-shirt",
+                            "2": "green",
+                            "3": "S",
+                            "4": 200
+                        },
+                        {
+                            "0": 7,
+                            "1": "polo shirt",
+                            "2": "black",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 8,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "S",
+                            "4": 50
+                        },
+                        {
+                            "0": 9,
+                            "1": "t-shirt",
+                            "2": "pink",
+                            "3": "S",
+                            "4": 0
+                        },
+                        {
+                            "0": 10,
+                            "1": "polo shirt",
+                            "2": "red",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 11,
+                            "1": "tank top",
+                            "2": "white",
+                            "3": "S",
+                            "4": 200
+                        },
+                        {
+                            "0": 12,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 15
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 1.267ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 32,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "cc9979bc-b06c-49d9-dace-203a3f27b245",
+                            "content": "OK, 1 row affected in 5.78ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 47
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2f30ef9c-935a-45ed-aa35-f9e0b2321960"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "2f30ef9c-935a-45ed-aa35-f9e0b2321960",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "L",
+                            "4": 20
+                        },
+                        {
+                            "0": 3,
+                            "1": "hoodie",
+                            "2": "grey",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 4,
+                            "1": "polo",
+                            "2": "purple",
+                            "3": "L",
+                            "4": 50
+                        },
+                        {
+                            "0": 5,
+                            "1": "t-shirt",
+                            "2": "white",
+                            "3": "S",
+                            "4": 10
+                        },
+                        {
+                            "0": 6,
+                            "1": "t-shirt",
+                            "2": "green",
+                            "3": "S",
+                            "4": 200
+                        },
+                        {
+                            "0": 7,
+                            "1": "polo shirt",
+                            "2": "black",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 8,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "S",
+                            "4": 50
+                        },
+                        {
+                            "0": 9,
+                            "1": "t-shirt",
+                            "2": "pink",
+                            "3": "S",
+                            "4": 0
+                        },
+                        {
+                            "0": 10,
+                            "1": "polo shirt",
+                            "2": "red",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 11,
+                            "1": "tank top",
+                            "2": "white",
+                            "3": "S",
+                            "4": 200
+                        },
+                        {
+                            "0": 12,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 1.266ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f26651d1-9452-48a6-c840-07d0da9ca94a",
+                            "content": "OK, 0 records retrieved in 0.808ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 48
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 35,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d45340d2-1431-47bf-ec06-2bf36ae1bb6f",
+                            "content": "OK, 2 rows affected in 6.324ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 36,
+                "end": 36,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e41cfe23-db0e-4f53-f675-ae0f7bb7e92a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "e41cfe23-db0e-4f53-f675-ae0f7bb7e92a",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "L",
+                            "4": 20
+                        },
+                        {
+                            "0": 3,
+                            "1": "hoodie",
+                            "2": "grey",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 4,
+                            "1": "polo",
+                            "2": "purple",
+                            "3": "L",
+                            "4": 50
+                        },
+                        {
+                            "0": 5,
+                            "1": "t-shirt",
+                            "2": "white",
+                            "3": "S",
+                            "4": 10
+                        },
+                        {
+                            "0": 7,
+                            "1": "polo shirt",
+                            "2": "black",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 8,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "S",
+                            "4": 50
+                        },
+                        {
+                            "0": 9,
+                            "1": "t-shirt",
+                            "2": "pink",
+                            "3": "S",
+                            "4": 0
+                        },
+                        {
+                            "0": 10,
+                            "1": "polo shirt",
+                            "2": "red",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 12,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 10 records retrieved in 0.68ms"
+                    },
+                    "totalRowCount": 10,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 37,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b0398199-b6a4-47da-de55-c2491c4d92c1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "b0398199-b6a4-47da-de55-c2491c4d92c1",
+                    "rows": [
+                        {
+                            "0": "t-shirt",
+                            "1": "blue",
+                            "2": "M",
+                            "3": 10
+                        },
+                        {
+                            "0": "hoodie",
+                            "1": "grey",
+                            "2": "M",
+                            "3": 5
+                        },
+                        {
+                            "0": "polo shirt",
+                            "1": "black",
+                            "2": "M",
+                            "3": 10
+                        },
+                        {
+                            "0": "polo shirt",
+                            "1": "red",
+                            "2": "M",
+                            "3": 5
+                        },
+                        {
+                            "0": "tank top",
+                            "1": "blue",
+                            "2": "M",
+                            "3": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "article",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.691ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT article, color, size, lastWorn FROM Shirts WHERE size='M'"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 43,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "598d300e-3b21-45eb-9724-54c7ced395dd",
+                            "content": "OK, 1 row affected in 2.274ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 87
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 44,
+                "end": 44,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "66d80793-1a10-4619-fc05-f25e00e77799"
+                    ]
+                },
+                "currentHeight": 148,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 39
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "66d80793-1a10-4619-fc05-f25e00e77799",
+                    "rows": [
+                        {
+                            "0": 3,
+                            "1": "hoodie",
+                            "2": "grey",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 9,
+                            "1": "t-shirt",
+                            "2": "pink",
+                            "3": "S",
+                            "4": 0
+                        },
+                        {
+                            "0": 10,
+                            "1": "polo shirt",
+                            "2": "red",
+                            "3": "M",
+                            "4": 5
+                        },
+                        {
+                            "0": 12,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.593ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts WHERE lastWorn<10"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 45,
+                "end": 45,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "bbb36d1a-2bfa-4b7f-bff0-6eb9a679d40f",
+                            "content": "OK, 4 rows affected in 1.977ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 46,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "43ff73f4-526f-4146-caae-06405353dd83"
+                    ]
+                },
+                "currentHeight": 190,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 21
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ade0e415-ee02-4c96-e76d-968595e168dd",
+                    "resultId": "43ff73f4-526f-4146-caae-06405353dd83",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "t-shirt",
+                            "2": "blue",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 2,
+                            "1": "polo",
+                            "2": "green",
+                            "3": "L",
+                            "4": 20
+                        },
+                        {
+                            "0": 4,
+                            "1": "polo",
+                            "2": "purple",
+                            "3": "L",
+                            "4": 50
+                        },
+                        {
+                            "0": 5,
+                            "1": "t-shirt",
+                            "2": "off white",
+                            "3": "XS",
+                            "4": 10
+                        },
+                        {
+                            "0": 7,
+                            "1": "polo shirt",
+                            "2": "black",
+                            "3": "M",
+                            "4": 10
+                        },
+                        {
+                            "0": 8,
+                            "1": "tank top",
+                            "2": "blue",
+                            "3": "S",
+                            "4": 50
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "ID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "article",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "color",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "size",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "lastWorn",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 6 records retrieved in 1.608ms"
+                    },
+                    "totalRowCount": 6,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Shirts"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 47,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
