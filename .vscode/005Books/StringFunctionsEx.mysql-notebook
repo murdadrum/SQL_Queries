@@ -15,22 +15,22 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 18,
-                    "column": 52
+                    "lineNumber": 13,
+                    "column": 11
                 },
                 "position": {
-                    "lineNumber": 18,
-                    "column": 52
+                    "lineNumber": 13,
+                    "column": 11
                 }
             }
         ],
         "viewState": {
-            "scrollLeft": 0,
+            "scrollLeft": 3,
             "firstPosition": {
-                "lineNumber": 15,
+                "lineNumber": 1,
                 "column": 1
             },
-            "firstPositionDeltaTop": 51
+            "firstPositionDeltaTop": 0
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -73,7 +73,7 @@
                 "start": 2,
                 "end": 2,
                 "language": "javascript",
-                "currentHeight": 36,
+                "currentHeight": 180,
                 "statements": []
             },
             "data": []
@@ -86,7 +86,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "853a1f06-0af3-4a71-81e9-397b5535f410"
+                        "96af5adf-99f0-4337-be7a-9a7d65b066d0"
                     ]
                 },
                 "currentHeight": 36,
@@ -104,8 +104,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "853a1f06-0af3-4a71-81e9-397b5535f410",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "96af5adf-99f0-4337-be7a-9a7d65b066d0",
                     "rows": [
                         {
                             "0": "?dertah hcus htiw em ta kool tac ym seod yhW"
@@ -139,7 +139,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "1be5f0fb-1e17-4447-94e7-c30bf90b5297"
+                        "0306d3b7-c5da-403e-d4da-0a865dbacf45"
                     ]
                 },
                 "currentHeight": 36,
@@ -157,8 +157,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "1be5f0fb-1e17-4447-94e7-c30bf90b5297",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "0306d3b7-c5da-403e-d4da-0a865dbacf45",
                     "rows": [
                         {
                             "0": "Bookshop"
@@ -241,7 +241,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "72514f4d-bad1-4336-93b8-7e2a9a765d28"
+                        "d38cfb5c-d370-46ce-c58e-04816ceeb1b1"
                     ]
                 },
                 "currentHeight": 36,
@@ -259,8 +259,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "72514f4d-bad1-4336-93b8-7e2a9a765d28",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "d38cfb5c-d370-46ce-c58e-04816ceeb1b1",
                     "rows": [
                         {
                             "0": "books"
@@ -294,7 +294,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "1cfc9ff9-5f79-430b-dd44-a3d88ffa7e45"
+                        "5287f258-3416-404f-9ba2-3d15516306c0"
                     ]
                 },
                 "currentHeight": 36,
@@ -312,8 +312,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "1cfc9ff9-5f79-430b-dd44-a3d88ffa7e45",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "5287f258-3416-404f-9ba2-3d15516306c0",
                     "rows": [
                         {
                             "0": "bookshop"
@@ -347,7 +347,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "4fc3d0e9-aa9d-4592-99a6-9a8588192631"
+                        "d0699810-1c25-4279-f9f2-9d94162ebd0e"
                     ]
                 },
                 "currentHeight": 36,
@@ -365,8 +365,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "4fc3d0e9-aa9d-4592-99a6-9a8588192631",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "d0699810-1c25-4279-f9f2-9d94162ebd0e",
                     "rows": [
                         {
                             "0": "The-->Namesake"
@@ -445,7 +445,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "20ff402d-dace-471f-8966-766990450036"
+                        "4a5d6c43-7a35-4093-e3d2-af686967f343"
                     ]
                 },
                 "currentHeight": 36,
@@ -463,8 +463,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "20ff402d-dace-471f-8966-766990450036",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "4a5d6c43-7a35-4093-e3d2-af686967f343",
                     "rows": [
                         {
                             "0": "Lahiri",
@@ -564,12 +564,20 @@
                 "end": 10,
                 "language": "mysql",
                 "result": {
-                    "type": "resultIds",
-                    "list": [
-                        "6b49c0f3-08f9-48f1-e5eb-567e44f1b272"
-                    ]
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1046): ClassicSession.run_sql: No database selected",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
                 },
-                "currentHeight": 36,
+                "currentHeight": 28,
                 "statements": [
                     {
                         "delimiter": ";",
@@ -582,79 +590,7 @@
                     }
                 ]
             },
-            "data": [
-                {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "6b49c0f3-08f9-48f1-e5eb-567e44f1b272",
-                    "rows": [
-                        {
-                            "0": "JHUMPA Lahiri"
-                        },
-                        {
-                            "0": "NEIL Gaiman"
-                        },
-                        {
-                            "0": "NEIL Gaiman"
-                        },
-                        {
-                            "0": "JHUMPA Lahiri"
-                        },
-                        {
-                            "0": "DAVE Eggers"
-                        },
-                        {
-                            "0": "DAVE Eggers"
-                        },
-                        {
-                            "0": "MICHAEL Chabon"
-                        },
-                        {
-                            "0": "PATTI Smith"
-                        },
-                        {
-                            "0": "DAVE Eggers"
-                        },
-                        {
-                            "0": "NEIL Gaiman"
-                        },
-                        {
-                            "0": "RAYMOND Carver"
-                        },
-                        {
-                            "0": "RAYMOND Carver"
-                        },
-                        {
-                            "0": "DON DeLillo"
-                        },
-                        {
-                            "0": "JOHN Steinbeck"
-                        },
-                        {
-                            "0": "DAVID Foster Wallace"
-                        },
-                        {
-                            "0": "DAVID Foster Wallace"
-                        }
-                    ],
-                    "columns": [
-                        {
-                            "title": "full name in caps",
-                            "field": "0",
-                            "dataType": {
-                                "type": 17
-                            }
-                        }
-                    ],
-                    "executionInfo": {
-                        "text": "OK, 16 records retrieved in 0.789ms"
-                    },
-                    "totalRowCount": 16,
-                    "hasMoreRows": false,
-                    "currentPage": 0,
-                    "index": 0,
-                    "sql": "SELECT CONCAT (UPPER(author_fname), (' '), (author_lname)) AS 'full name in caps' FROM books"
-                }
-            ]
+            "data": []
         },
         {
             "state": {
@@ -664,7 +600,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "6c055d98-2501-4e85-d468-49bd7d7edb5a"
+                        "cfad43fa-af63-4c60-ed3b-3deb617e9244"
                     ]
                 },
                 "currentHeight": 36,
@@ -682,8 +618,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "6c055d98-2501-4e85-d468-49bd7d7edb5a",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "cfad43fa-af63-4c60-ed3b-3deb617e9244",
                     "rows": [
                         {
                             "0": 1,
@@ -900,7 +836,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "f4031e7f-e999-491d-b6dc-271affcf889a"
+                        "cbe0c993-bdc2-4415-fd38-ebe8879cef7e"
                     ]
                 },
                 "currentHeight": 36,
@@ -918,8 +854,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "f4031e7f-e999-491d-b6dc-271affcf889a",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "cbe0c993-bdc2-4415-fd38-ebe8879cef7e",
                     "rows": [
                         {
                             "0": "The Namesake was released 2003"
@@ -998,7 +934,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "5c83fe4b-eaed-41bc-aa77-2d9c2b680a20"
+                        "295e649a-39c4-4310-da9a-7f2a816b2902"
                     ]
                 },
                 "currentHeight": 36,
@@ -1016,8 +952,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "5c83fe4b-eaed-41bc-aa77-2d9c2b680a20",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "295e649a-39c4-4310-da9a-7f2a816b2902",
                     "rows": [
                         {
                             "0": "The Namesake",
@@ -1119,7 +1055,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "2c745087-8ba2-4d91-f33f-ab9f960f5a90"
+                        "5b938a50-3851-401f-bbbe-0ac9956b4128"
                     ]
                 },
                 "currentHeight": 352,
@@ -1137,8 +1073,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "2c745087-8ba2-4d91-f33f-ab9f960f5a90",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "5b938a50-3851-401f-bbbe-0ac9956b4128",
                     "rows": [
                         {
                             "0": 1,
@@ -1355,7 +1291,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "a11b3057-a92f-41d1-af8c-4834815c94c1"
+                        "8e1245f2-14bb-46c9-c1a5-da6c01751a00"
                     ]
                 },
                 "currentHeight": 352,
@@ -1373,8 +1309,8 @@
             },
             "data": [
                 {
-                    "tabId": "de652b89-1923-4735-852d-fb6366443c1a",
-                    "resultId": "a11b3057-a92f-41d1-af8c-4834815c94c1",
+                    "tabId": "d2178cf4-7ece-4f5c-d86f-1f33e0f20a67",
+                    "resultId": "8e1245f2-14bb-46c9-c1a5-da6c01751a00",
                     "rows": [
                         {
                             "0": "The Namesa...",
