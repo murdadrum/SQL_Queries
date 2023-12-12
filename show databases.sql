@@ -1,9 +1,9 @@
--- show database;
+SHOW DATABASES;
 
--- USE FamilyCopy;
+USE TV;
 
--- SELECT database();
+SELECT database();
 
--- SHOW Tables;
+SHOW Tables;
 
-SELECT * FROM MembersCopy;
+SELECT * FROM Reviewers;

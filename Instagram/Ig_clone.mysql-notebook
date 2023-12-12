@@ -1,0 +1,1241 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "SHOW DATABASES;\nDROP DATABASE Ig_clone;\nCREATE DATABASE Ig_clone;\nUSE Ig_clone;\nSELECT DATABASE();\nCREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    username VARCHAR(255) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n)\nDESC users;\nCREATE TABLE photos (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    image_url VARCHAR(255) NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nINSERT INTO users (username) VALUES\n('BlueTheCat'),\n('CharlieBrown'),\n('ColtSteele');\nSELECT * FROM users;\nINSERT INTO photos (image_url, user_id) VALUES\n('/alskjd76', 1),\n('/alskjd98', 2),\n('/90jddlkj', 2),\n('233jddlkj', 3);\nSELECT * FROM photos, users;\n/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id;\nSHOW TABLES;\nSELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id;\nCREATE TABLE comments (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    comment_text VARCHAR(255) NOT NULL,\n    photo_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nDESC comments;\nCREATE TABLE likes (\n    user_id INTEGER NOT NULL,\n    photo_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    PRIMARY KEY(user_id, photo_id)\n);\nDESC likes;\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 59,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 59,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 46,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -12
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "49d1ab38-139b-493f-c421-690e4a950a7b"
+                    ]
+                },
+                "currentHeight": 66.07272338867188,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "49d1ab38-139b-493f-c421-690e4a950a7b",
+                    "rows": [
+                        {
+                            "0": "Bookshop"
+                        },
+                        {
+                            "0": "GUADS"
+                        },
+                        {
+                            "0": "Ig_clone"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "school"
+                        },
+                        {
+                            "0": "Shop"
+                        },
+                        {
+                            "0": "soap_store"
+                        },
+                        {
+                            "0": "sys"
+                        },
+                        {
+                            "0": "TV"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 1.006ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a1fbf163-bc7b-4f1f-c237-d7dd0519feda",
+                            "content": "OK, 2 rows affected in 11.24ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 1,
+                            "resultId": "d82a0e0e-3368-485d-d002-0cc8f1f08428",
+                            "content": "OK, 1 row affected in 3.623ms"
+                        },
+                        {
+                            "type": 4,
+                            "index": 2,
+                            "resultId": "a1e2375d-bb0d-4bd5-8601-91e52ba22f43",
+                            "content": "OK, 0 records retrieved in 0.752ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 23
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 23,
+                            "length": 26
+                        },
+                        "contentStart": 24,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 49,
+                            "length": 14
+                        },
+                        "contentStart": 50,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "03cf7e67-4880-44c1-a45f-3dced941339a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 18
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "03cf7e67-4880-44c1-a45f-3dced941339a",
+                    "rows": [
+                        {
+                            "0": "ig_clone"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATABASE()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.801ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DATABASE()"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "80769cb5-e545-4ee3-a909-017064b71326",
+                            "content": "OK, 0 records retrieved in 11.085ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 143
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b37a61cb-1d3c-4639-add3-a73dd9b50ac1"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "b37a61cb-1d3c-4639-add3-a73dd9b50ac1",
+                    "rows": [
+                        {
+                            "0": "id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "username",
+                            "1": "varchar(255)",
+                            "2": "NO",
+                            "3": "UNI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "created_at",
+                            "1": "timestamp",
+                            "2": "YES",
+                            "3": "",
+                            "4": "CURRENT_TIMESTAMP",
+                            "5": "DEFAULT_GENERATED"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 2.313ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f83c1e3c-5957-4a9a-c2c3-7a551c377fdc",
+                            "content": "OK, 0 records retrieved in 10.551ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 220
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "587b0197-082b-4b02-abbd-0c8475befb1b",
+                            "content": "OK, 3 rows affected in 2.315ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 85
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "516997c0-0831-41c9-ca50-a3eeec6663da"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "516997c0-0831-41c9-ca50-a3eeec6663da",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "BlueTheCat",
+                            "2": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 2,
+                            "1": "CharlieBrown",
+                            "2": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 3,
+                            "1": "ColtSteele",
+                            "2": "2023-12-11 22:57:32"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "created_at",
+                            "field": "2",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.562ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 28,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "139b844e-8515-431b-f2e7-6e6d9972a1f2",
+                            "content": "OK, 4 rows affected in 2.214ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 118
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 29,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "38505682-296a-45a0-b012-60670849e28c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 28
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "38505682-296a-45a0-b012-60670849e28c",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "/alskjd76",
+                            "2": 1,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 3,
+                            "5": "ColtSteele",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 1,
+                            "1": "/alskjd76",
+                            "2": 1,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 2,
+                            "5": "CharlieBrown",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 1,
+                            "1": "/alskjd76",
+                            "2": 1,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 1,
+                            "5": "BlueTheCat",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 2,
+                            "1": "/alskjd98",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 3,
+                            "5": "ColtSteele",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 2,
+                            "1": "/alskjd98",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 2,
+                            "5": "CharlieBrown",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 2,
+                            "1": "/alskjd98",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 1,
+                            "5": "BlueTheCat",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 3,
+                            "1": "/90jddlkj",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 3,
+                            "5": "ColtSteele",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 3,
+                            "1": "/90jddlkj",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 2,
+                            "5": "CharlieBrown",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 3,
+                            "1": "/90jddlkj",
+                            "2": 2,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 1,
+                            "5": "BlueTheCat",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 4,
+                            "1": "233jddlkj",
+                            "2": 3,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 3,
+                            "5": "ColtSteele",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 4,
+                            "1": "233jddlkj",
+                            "2": 3,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 2,
+                            "5": "CharlieBrown",
+                            "6": "2023-12-11 22:57:32"
+                        },
+                        {
+                            "0": 4,
+                            "1": "233jddlkj",
+                            "2": 3,
+                            "3": "2023-12-11 22:57:33",
+                            "4": 1,
+                            "5": "BlueTheCat",
+                            "6": "2023-12-11 22:57:32"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "image_url",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "user_id",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "created_at",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "id",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "created_at",
+                            "field": "6",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 12 records retrieved in 0.647ms"
+                    },
+                    "totalRowCount": 12,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM photos, users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): ClassicSession.run_sql: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n   ' at line 1",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 111
+                        },
+                        "contentStart": 0,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9d12e568-8e00-4b10-aa29-6a0b7e283aec"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "9d12e568-8e00-4b10-aa29-6a0b7e283aec",
+                    "rows": [
+                        {
+                            "0": "photos"
+                        },
+                        {
+                            "0": "users"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_ig_clone",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 1.265ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 39,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "641febe2-0b6a-453c-957c-0ded728a1208"
+                    ]
+                },
+                "currentHeight": 167.04486083984375,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 123
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "641febe2-0b6a-453c-957c-0ded728a1208",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "/alskjd76",
+                            "2": "BlueTheCat"
+                        },
+                        {
+                            "0": 2,
+                            "1": "/alskjd98",
+                            "2": "CharlieBrown"
+                        },
+                        {
+                            "0": 3,
+                            "1": "/90jddlkj",
+                            "2": "CharlieBrown"
+                        },
+                        {
+                            "0": 4,
+                            "1": "233jddlkj",
+                            "2": "ColtSteele"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "image_url",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.766ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 40,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "6bcbd9fd-e602-4910-b7ad-8f9a85f3c7de",
+                            "content": "OK, 0 records retrieved in 22.671ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 305
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 49,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "eb78f9d4-12a4-410a-ceb3-4c6cd7a17b51"
+                    ]
+                },
+                "currentHeight": 169,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 14
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "eb78f9d4-12a4-410a-ceb3-4c6cd7a17b51",
+                    "rows": [
+                        {
+                            "0": "id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": "auto_increment"
+                        },
+                        {
+                            "0": "comment_text",
+                            "1": "varchar(255)",
+                            "2": "NO",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "photo_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "user_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "MUL",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "created_at",
+                            "1": "timestamp",
+                            "2": "YES",
+                            "3": "",
+                            "4": "CURRENT_TIMESTAMP",
+                            "5": "DEFAULT_GENERATED"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 5ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC comments"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 50,
+                "end": 57,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "39a64b21-ff72-47e5-e96b-9ead245b4d20",
+                            "content": "OK, 0 records retrieved in 16.032ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 255
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 58,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "78508472-f438-41a3-c1b2-975b4904ed68"
+                    ]
+                },
+                "currentHeight": 127,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "78508472-f438-41a3-c1b2-975b4904ed68",
+                    "rows": [
+                        {
+                            "0": "user_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "photo_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "created_at",
+                            "1": "timestamp",
+                            "2": "YES",
+                            "3": "",
+                            "4": "CURRENT_TIMESTAMP",
+                            "5": "DEFAULT_GENERATED"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 1.878ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC likes"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 59,
+                "end": 59,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
