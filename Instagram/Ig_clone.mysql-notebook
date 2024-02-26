@@ -2,7 +2,7 @@
     "type": "MySQLNotebook",
     "version": "1.0",
     "caption": "DB Notebook",
-    "content": "SHOW DATABASES;\nDROP DATABASE Ig_clone;\nCREATE DATABASE Ig_clone;\nUSE Ig_clone;\nSELECT DATABASE();\nCREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    username VARCHAR(255) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n)\nDESC users;\nCREATE TABLE photos (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    image_url VARCHAR(255) NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nINSERT INTO users (username) VALUES\n('BlueTheCat'),\n('CharlieBrown'),\n('ColtSteele');\nSELECT * FROM users;\nINSERT INTO photos (image_url, user_id) VALUES\n('/alskjd76', 1),\n('/alskjd98', 2),\n('/90jddlkj', 2),\n('233jddlkj', 3);\nSELECT * FROM photos, users;\n/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id;\nSHOW TABLES;\nSELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id;\nCREATE TABLE comments (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    comment_text VARCHAR(255) NOT NULL,\n    photo_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nDESC comments;\nCREATE TABLE likes (\n    user_id INTEGER NOT NULL,\n    photo_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    PRIMARY KEY(user_id, photo_id)\n);\nDESC likes;\n",
+    "content": "SHOW DATABASES;\nDROP DATABASE Ig_clone;\nCREATE DATABASE Ig_clone;\nUSE Ig_clone;\nSELECT DATABASE();\nCREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    username VARCHAR(255) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n)\nDESC users;\nCREATE TABLE photos (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    image_url VARCHAR(255) NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nINSERT INTO users (username) VALUES\n('BlueTheCat'),\n('CharlieBrown'),\n('ColtSteele');\nSELECT * FROM users;\nINSERT INTO photos (image_url, user_id) VALUES\n('/alskjd76', 1),\n('/alskjd98', 2),\n('/90jddlkj', 2),\n('233jddlkj', 3);\nSELECT * FROM photos, users;\n/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id;\nSHOW TABLES;\nSELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id;\nCREATE TABLE comments (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    comment_text VARCHAR(255) NOT NULL,\n    photo_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nDESC comments;\nCREATE TABLE likes (\n    user_id INTEGER NOT NULL,\n    photo_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    PRIMARY KEY(user_id, photo_id)\n);\nDESC likes;\nCREATE TABLE follows (\n    follower_id INTEGER NOT NULL,\n    followee_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(follower_id) REFERENCES users(id),\n    FOREIGN KEY(followee_id) REFERENCES users(id),\n    PRIMARY KEY(follower_id, followee_id)\n);\nDESC follows;\n",
     "options": {
         "tabSize": 4,
         "insertSpaces": true,
@@ -15,11 +15,11 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 59,
+                    "lineNumber": 68,
                     "column": 1
                 },
                 "position": {
-                    "lineNumber": 59,
+                    "lineNumber": 68,
                     "column": 1
                 }
             }
@@ -27,10 +27,10 @@
         "viewState": {
             "scrollLeft": 0,
             "firstPosition": {
-                "lineNumber": 46,
+                "lineNumber": 53,
                 "column": 1
             },
-            "firstPositionDeltaTop": -12
+            "firstPositionDeltaTop": -18
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -963,7 +963,7 @@
                         "eb78f9d4-12a4-410a-ceb3-4c6cd7a17b51"
                     ]
                 },
-                "currentHeight": 169,
+                "currentHeight": 36,
                 "statements": [
                     {
                         "delimiter": ";",
@@ -1220,7 +1220,147 @@
         {
             "state": {
                 "start": 59,
-                "end": 59,
+                "end": 66,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d22944a4-5ae9-4c23-c38d-447a9d08cca1",
+                            "content": "OK, 0 records retrieved in 16.247ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 277
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 67,
+                "end": 67,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2ff4aeda-4c00-4df3-da55-a39a9992238c"
+                    ]
+                },
+                "currentHeight": 127,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
+                    "resultId": "2ff4aeda-4c00-4df3-da55-a39a9992238c",
+                    "rows": [
+                        {
+                            "0": "follower_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "followee_id",
+                            "1": "int",
+                            "2": "NO",
+                            "3": "PRI",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "created_at",
+                            "1": "timestamp",
+                            "2": "YES",
+                            "3": "",
+                            "4": "CURRENT_TIMESTAMP",
+                            "5": "DEFAULT_GENERATED"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 46
+                            }
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 2.192ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESC follows"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 68,
+                "end": 68,
                 "language": "mysql",
                 "currentHeight": 180,
                 "statements": [
