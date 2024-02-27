@@ -1,0 +1,1713 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\n-- COUNT\n\nSELECT COUNT(*) FROM books;\n-- count DISTINCT\n\nSELECT COUNT(DISTINCT author_fname) FROM books;\nSELECT COUNT(DISTINCT author_lname) FROM books;\nSELECT COUNT(*) FROM books WHERE title LIKE ('%the%');\n-- GROUP BY\n\nSELECT author_lname FROM books GROUP BY author_lname;\nSELECT\n    author_lname,\n    COUNT(*) AS books_written\nFROM books\nGROUP BY author_lname\nORDER BY books_written DESC;\nSELECT released_year, COUNT(*) FROM books GROUP BY released_year;\nSELECT author_lname, COUNT(*)\nFROM books\nGROUP BY author_lname\nORDER BY COUNT(*) DESC;\nSELECT\n    author_lname,\n    COUNT(*) AS books_written\nFROM books\nGROUP BY author_lname\nORDER BY books_written DESC;\n-- MIN MAX\n\nSELECT MIN(released_year) FROM books;\nSELECT MAX(author_lname) FROM books;\nSELECT MAX(pages) FROM books;\n-- sub query\n\nSELECT title, pages\nFROM books\nWHERE pages = (\n        SELECT MAX(pages)\n        FROM books\n    );\nSELECT title, released_year\nFROM books\nWHERE released_year = (\n        SELECT MIN(released_year)\n        FROM books\n    );\n-- min max GROUP BY\nSELECT\n    author_lname,\n    COUNT(*) AS books_written,\n    MIN(released_year) AS earliest_release,\n    MAX(released_year) AS latest_release,\n    MAX(pages) AS longest_book\nFROM books GROUP BY author_lname\nORDER BY earliest_release;\n-- SUM\nSELECT SUM(pages) FROM books;\nSELECT author_lname, SUM(pages) FROM books GROUP BY author_lname;\n-- NaN\nSELECT SUM(author_lname) FROM books;\n-- avg average AVG\nSELECT AVG(released_year) FROM books;\nSELECT AVG(pages) FROM books;\nSELECT released_year, AVG(stock_quantity), COUNT(*) FROM books GROUP BY released_year;\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 67,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 67,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 63,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 38
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 104,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e3a51f5c-7d0a-4349-d263-76e4114bafbf"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 37
+                        },
+                        "contentStart": 10,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "e3a51f5c-7d0a-4349-d263-76e4114bafbf",
+                    "rows": [
+                        {
+                            "0": 19
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "COUNT(*)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 2.686ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- COUNT\n\nSELECT COUNT(*) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 7,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "36a91e74-89c5-4b6f-d610-e1dbbd6c4107"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 66
+                        },
+                        "contentStart": 19,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "36a91e74-89c5-4b6f-d610-e1dbbd6c4107",
+                    "rows": [
+                        {
+                            "0": 12
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "COUNT(DISTINCT author_fname)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.943ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- count DISTINCT\n\nSELECT COUNT(DISTINCT author_fname) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 8,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "38b858c6-f6fd-4358-bf09-bcb711514e56"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 47
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 47,
+                            "length": 0
+                        },
+                        "contentStart": 46,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "38b858c6-f6fd-4358-bf09-bcb711514e56",
+                    "rows": [
+                        {
+                            "0": 11
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "COUNT(DISTINCT author_lname)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.933ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT COUNT(DISTINCT author_lname) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8b9a8187-425d-4695-c09c-72d09b9f9418"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 54
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "8b9a8187-425d-4695-c09c-72d09b9f9418",
+                    "rows": [
+                        {
+                            "0": 6
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "COUNT(*)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.41ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT COUNT(*) FROM books WHERE title LIKE ('%the%')"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8c89e198-d628-430c-91ef-251cf967fd81"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 66
+                        },
+                        "contentStart": 13,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "8c89e198-d628-430c-91ef-251cf967fd81",
+                    "rows": [
+                        {
+                            "0": "Lahiri"
+                        },
+                        {
+                            "0": "Gaiman"
+                        },
+                        {
+                            "0": "Eggers"
+                        },
+                        {
+                            "0": "Chabon"
+                        },
+                        {
+                            "0": "Smith"
+                        },
+                        {
+                            "0": "Carver"
+                        },
+                        {
+                            "0": "DeLillo"
+                        },
+                        {
+                            "0": "Steinbeck"
+                        },
+                        {
+                            "0": "Foster Wallace"
+                        },
+                        {
+                            "0": "Harris"
+                        },
+                        {
+                            "0": "Saunders"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 1.41ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- GROUP BY\n\nSELECT author_lname FROM books GROUP BY author_lname"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0e099604-5e36-4d50-c69d-58a5e941572c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 116
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "0e099604-5e36-4d50-c69d-58a5e941572c",
+                    "rows": [
+                        {
+                            "0": "Gaiman",
+                            "1": 3
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": 3
+                        },
+                        {
+                            "0": "Lahiri",
+                            "1": 2
+                        },
+                        {
+                            "0": "Carver",
+                            "1": 2
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": 2
+                        },
+                        {
+                            "0": "Harris",
+                            "1": 2
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": 1
+                        },
+                        {
+                            "0": "Smith",
+                            "1": 1
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": 1
+                        },
+                        {
+                            "0": "Steinbeck",
+                            "1": 1
+                        },
+                        {
+                            "0": "Saunders",
+                            "1": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "books_written",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 0.843ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n    author_lname,\n    COUNT(*) AS books_written\nFROM books\nGROUP BY author_lname\nORDER BY books_written DESC"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "dac394e9-c62b-4857-d37d-4f8d2a498ad9"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "dac394e9-c62b-4857-d37d-4f8d2a498ad9",
+                    "rows": [
+                        {
+                            "0": 2003,
+                            "1": 2
+                        },
+                        {
+                            "0": 2016,
+                            "1": 1
+                        },
+                        {
+                            "0": 2001,
+                            "1": 3
+                        },
+                        {
+                            "0": 1996,
+                            "1": 1
+                        },
+                        {
+                            "0": 2012,
+                            "1": 1
+                        },
+                        {
+                            "0": 2013,
+                            "1": 1
+                        },
+                        {
+                            "0": 2000,
+                            "1": 1
+                        },
+                        {
+                            "0": 2010,
+                            "1": 1
+                        },
+                        {
+                            "0": 1981,
+                            "1": 1
+                        },
+                        {
+                            "0": 1989,
+                            "1": 1
+                        },
+                        {
+                            "0": 1985,
+                            "1": 1
+                        },
+                        {
+                            "0": 1945,
+                            "1": 1
+                        },
+                        {
+                            "0": 2004,
+                            "1": 1
+                        },
+                        {
+                            "0": 2005,
+                            "1": 1
+                        },
+                        {
+                            "0": 2014,
+                            "1": 1
+                        },
+                        {
+                            "0": 2017,
+                            "1": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "released_year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "COUNT(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 1.425ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT released_year, COUNT(*) FROM books GROUP BY released_year"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1992c704-1070-4f2a-f2c3-beb9d5a5716c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 86
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "1992c704-1070-4f2a-f2c3-beb9d5a5716c",
+                    "rows": [
+                        {
+                            "0": "Gaiman",
+                            "1": 3
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": 3
+                        },
+                        {
+                            "0": "Lahiri",
+                            "1": 2
+                        },
+                        {
+                            "0": "Carver",
+                            "1": 2
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": 2
+                        },
+                        {
+                            "0": "Harris",
+                            "1": 2
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": 1
+                        },
+                        {
+                            "0": "Smith",
+                            "1": 1
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": 1
+                        },
+                        {
+                            "0": "Steinbeck",
+                            "1": 1
+                        },
+                        {
+                            "0": "Saunders",
+                            "1": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "COUNT(*)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 3.334ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT author_lname, COUNT(*)\nFROM books\nGROUP BY author_lname\nORDER BY COUNT(*) DESC"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 29,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1b39b6ac-bf12-4251-9383-2cf3d265dd3a"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 116
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "1b39b6ac-bf12-4251-9383-2cf3d265dd3a",
+                    "rows": [
+                        {
+                            "0": "Gaiman",
+                            "1": 3
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": 3
+                        },
+                        {
+                            "0": "Lahiri",
+                            "1": 2
+                        },
+                        {
+                            "0": "Carver",
+                            "1": 2
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": 2
+                        },
+                        {
+                            "0": "Harris",
+                            "1": 2
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": 1
+                        },
+                        {
+                            "0": "Smith",
+                            "1": 1
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": 1
+                        },
+                        {
+                            "0": "Steinbeck",
+                            "1": 1
+                        },
+                        {
+                            "0": "Saunders",
+                            "1": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "books_written",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 0.793ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n    author_lname,\n    COUNT(*) AS books_written\nFROM books\nGROUP BY author_lname\nORDER BY books_written DESC"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 30,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1acf8c4d-6af5-48cd-e215-9ff50347f896"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 49
+                        },
+                        "contentStart": 12,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "1acf8c4d-6af5-48cd-e215-9ff50347f896",
+                    "rows": [
+                        {
+                            "0": 1945
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MIN(released_year)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.545ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- MIN MAX\n\nSELECT MIN(released_year) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 33,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f6cf5fa7-43df-4b48-b0ef-cfc88e6033e9"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "f6cf5fa7-43df-4b48-b0ef-cfc88e6033e9",
+                    "rows": [
+                        {
+                            "0": "Steinbeck"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MAX(author_lname)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.069ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT MAX(author_lname) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 34,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a8e25302-01f9-43e4-edf0-d7927ecb731f"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "a8e25302-01f9-43e4-edf0-d7927ecb731f",
+                    "rows": [
+                        {
+                            "0": 634
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MAX(pages)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.715ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT MAX(pages) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "782feef6-75c6-4101-cb47-b6905ec057dd"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 112
+                        },
+                        "contentStart": 14,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "782feef6-75c6-4101-cb47-b6905ec057dd",
+                    "rows": [
+                        {
+                            "0": "The Amazing Adventures of Kavalier & Clay",
+                            "1": 634
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "pages",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.7ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- sub query\n\nSELECT title, pages\nFROM books\nWHERE pages = (\n        SELECT MAX(pages)\n        FROM books\n    )"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 48,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9087a20f-658e-4305-c3b8-abc3b6e21c4e"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 122
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "9087a20f-658e-4305-c3b8-abc3b6e21c4e",
+                    "rows": [
+                        {
+                            "0": "Cannery Row",
+                            "1": 1945
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "title",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "released_year",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.541ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT title, released_year\nFROM books\nWHERE released_year = (\n        SELECT MIN(released_year)\n        FROM books\n    )"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 49,
+                "end": 57,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8b97bbab-2100-47a6-bfa2-4065b3914d66"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 252
+                        },
+                        "contentStart": 20,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "8b97bbab-2100-47a6-bfa2-4065b3914d66",
+                    "rows": [
+                        {
+                            "0": "Steinbeck",
+                            "1": 1,
+                            "2": 1945,
+                            "3": 1945,
+                            "4": 181
+                        },
+                        {
+                            "0": "Carver",
+                            "1": 2,
+                            "2": 1981,
+                            "3": 1989,
+                            "4": 526
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": 1,
+                            "2": 1985,
+                            "3": 1985,
+                            "4": 320
+                        },
+                        {
+                            "0": "Lahiri",
+                            "1": 2,
+                            "2": 1996,
+                            "3": 2003,
+                            "4": 291
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": 1,
+                            "2": 2000,
+                            "3": 2000,
+                            "4": 634
+                        },
+                        {
+                            "0": "Gaiman",
+                            "1": 3,
+                            "2": 2001,
+                            "3": 2016,
+                            "4": 465
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": 3,
+                            "2": 2001,
+                            "3": 2013,
+                            "4": 504
+                        },
+                        {
+                            "0": "Harris",
+                            "1": 2,
+                            "2": 2001,
+                            "3": 2014,
+                            "4": 428
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": 2,
+                            "2": 2004,
+                            "3": 2005,
+                            "4": 343
+                        },
+                        {
+                            "0": "Smith",
+                            "1": 1,
+                            "2": 2010,
+                            "3": 2010,
+                            "4": 304
+                        },
+                        {
+                            "0": "Saunders",
+                            "1": 1,
+                            "2": 2017,
+                            "3": 2017,
+                            "4": 367
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "books_written",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "earliest_release",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "latest_release",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "longest_book",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 1.23ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- min max GROUP BY\nSELECT\n    author_lname,\n    COUNT(*) AS books_written,\n    MIN(released_year) AS earliest_release,\n    MAX(released_year) AS latest_release,\n    MAX(pages) AS longest_book\nFROM books GROUP BY author_lname\nORDER BY earliest_release"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 58,
+                "end": 59,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e235f0bf-6951-4df9-e400-60a8dc1b10c3"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 36
+                        },
+                        "contentStart": 7,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "e235f0bf-6951-4df9-e400-60a8dc1b10c3",
+                    "rows": [
+                        {
+                            "0": "6623"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "SUM(pages)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.727ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- SUM\nSELECT SUM(pages) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 60,
+                "end": 60,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "09080a79-2fa7-44a7-cf79-7c8bfae513b0"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 65
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "09080a79-2fa7-44a7-cf79-7c8bfae513b0",
+                    "rows": [
+                        {
+                            "0": "Lahiri",
+                            "1": "489"
+                        },
+                        {
+                            "0": "Gaiman",
+                            "1": "977"
+                        },
+                        {
+                            "0": "Eggers",
+                            "1": "1293"
+                        },
+                        {
+                            "0": "Chabon",
+                            "1": "634"
+                        },
+                        {
+                            "0": "Smith",
+                            "1": "304"
+                        },
+                        {
+                            "0": "Carver",
+                            "1": "702"
+                        },
+                        {
+                            "0": "DeLillo",
+                            "1": "320"
+                        },
+                        {
+                            "0": "Steinbeck",
+                            "1": "181"
+                        },
+                        {
+                            "0": "Foster Wallace",
+                            "1": "672"
+                        },
+                        {
+                            "0": "Harris",
+                            "1": "684"
+                        },
+                        {
+                            "0": "Saunders",
+                            "1": "367"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "author_lname",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "SUM(pages)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 11 records retrieved in 0.766ms"
+                    },
+                    "totalRowCount": 11,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT author_lname, SUM(pages) FROM books GROUP BY author_lname"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 61,
+                "end": 62,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "7a9c4f59-0caf-4cc5-894e-ce9a04ed2958"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 43
+                        },
+                        "contentStart": 7,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "7a9c4f59-0caf-4cc5-894e-ce9a04ed2958",
+                    "rows": [
+                        {
+                            "0": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "SUM(author_lname)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 9
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.656ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- NaN\nSELECT SUM(author_lname) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 63,
+                "end": 64,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9889e81b-83f2-46ee-d040-e1d7e164de1c"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 56
+                        },
+                        "contentStart": 19,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "9889e81b-83f2-46ee-d040-e1d7e164de1c",
+                    "rows": [
+                        {
+                            "0": "1999.7895"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "AVG(released_year)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 1.121ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "-- avg average AVG\nSELECT AVG(released_year) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 65,
+                "end": 65,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a1b257f3-e3b3-43ae-89f7-a9dc7ed92ca6"
+                    ]
+                },
+                "currentHeight": 85,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "a1b257f3-e3b3-43ae-89f7-a9dc7ed92ca6",
+                    "rows": [
+                        {
+                            "0": "348.5789"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "AVG(pages)",
+                            "field": "0",
+                            "dataType": {
+                                "type": 10
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.704ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT AVG(pages) FROM books"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 66,
+                "end": 66,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1a5bdc16-e266-46bf-aa48-8dabb6c2c4b2"
+                    ]
+                },
+                "currentHeight": 352,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 86
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "9369b393-440f-4670-b599-96cc1fd9a166",
+                    "resultId": "1a5bdc16-e266-46bf-aa48-8dabb6c2c4b2",
+                    "rows": [
+                        {
+                            "0": 2003,
+                            "1": "66.0000",
+                            "2": 2
+                        },
+                        {
+                            "0": 2016,
+                            "1": "43.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2001,
+                            "1": "134.3333",
+                            "2": 3
+                        },
+                        {
+                            "0": 1996,
+                            "1": "97.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2012,
+                            "1": "154.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2013,
+                            "1": "26.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2000,
+                            "1": "68.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2010,
+                            "1": "55.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 1981,
+                            "1": "23.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 1989,
+                            "1": "12.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 1985,
+                            "1": "49.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 1945,
+                            "1": "95.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2004,
+                            "1": "172.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2005,
+                            "1": "92.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2014,
+                            "1": "29.0000",
+                            "2": 1
+                        },
+                        {
+                            "0": 2017,
+                            "1": "1000.0000",
+                            "2": 1
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "released_year",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "AVG(stock_quantity)",
+                            "field": "1",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "COUNT(*)",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.763ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT released_year, AVG(stock_quantity), COUNT(*) FROM books GROUP BY released_year"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 67,
+                "end": 67,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

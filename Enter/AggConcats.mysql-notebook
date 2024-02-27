@@ -1,0 +1,118 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "Result #1",
+    "content": "SHOW TABLES",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": null,
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "187caf7a-047d-4c64-940c-af991fe3452c"
+                    ]
+                },
+                "currentHeight": 352,
+                "maximizeResultPane": true,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 11
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ce3ab0c8-505d-4b47-8a99-cd204a2bf58a",
+                    "resultId": "187caf7a-047d-4c64-940c-af991fe3452c",
+                    "rows": [
+                        {
+                            "0": "books"
+                        },
+                        {
+                            "0": "captions"
+                        },
+                        {
+                            "0": "captions2"
+                        },
+                        {
+                            "0": "captions3"
+                        },
+                        {
+                            "0": "captions4"
+                        },
+                        {
+                            "0": "companies"
+                        },
+                        {
+                            "0": "contacts"
+                        },
+                        {
+                            "0": "contacts2"
+                        },
+                        {
+                            "0": "houses"
+                        },
+                        {
+                            "0": "inventory"
+                        },
+                        {
+                            "0": "palindromes"
+                        },
+                        {
+                            "0": "palindromes2"
+                        },
+                        {
+                            "0": "people"
+                        },
+                        {
+                            "0": "tweets"
+                        },
+                        {
+                            "0": "unique_cats3"
+                        },
+                        {
+                            "0": "users"
+                        },
+                        {
+                            "0": "users2"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_bookshop",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 17 records retrieved in 2.268ms"
+                    },
+                    "totalRowCount": 17,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        }
+    ]
+}
