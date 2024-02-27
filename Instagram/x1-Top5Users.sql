@@ -1,0 +1,13 @@
+SHOW DATABASES;
+
+USE ig_clone;
+
+SELECT DATABASE()
+
+SHOW Tables;
+
+SELECT * FROM Users;
+
+SELECT * FROM Users
+ORDER BY created_at DESC
+LIMIT 5;

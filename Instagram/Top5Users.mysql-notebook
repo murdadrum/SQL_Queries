@@ -1,0 +1,425 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nSHOW DATABASES;\nUSE ig_clone;\nSELECT DATABASE()\nSHOW TABLES;\nSELECT * FROM users\nORDER BY created_at DESC\nLIMIT 5;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 9,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 9,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 5,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -7
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5e9d297f-87cb-4264-deae-017af6645466"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "603abfc5-c514-4f4b-f853-2972d0b7700c",
+                    "resultId": "5e9d297f-87cb-4264-deae-017af6645466",
+                    "rows": [
+                        {
+                            "0": "Bookshop"
+                        },
+                        {
+                            "0": "bookstore"
+                        },
+                        {
+                            "0": "GUADS"
+                        },
+                        {
+                            "0": "ig_clone"
+                        },
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "QAint"
+                        },
+                        {
+                            "0": "school"
+                        },
+                        {
+                            "0": "Shop"
+                        },
+                        {
+                            "0": "soap_store"
+                        },
+                        {
+                            "0": "sys"
+                        },
+                        {
+                            "0": "TV"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 13 records retrieved in 2.062ms"
+                    },
+                    "totalRowCount": 13,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW DATABASES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "432c0189-9848-4b71-943e-0285b0a6c4ba",
+                            "content": "OK, 0 records retrieved in 0.604ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 13
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5800242a-9306-4df5-eeb1-416e8fba3515"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 17
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "603abfc5-c514-4f4b-f853-2972d0b7700c",
+                    "resultId": "5800242a-9306-4df5-eeb1-416e8fba3515",
+                    "rows": [
+                        {
+                            "0": "ig_clone"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "DATABASE()",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.715ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT DATABASE()"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "85c87bb1-f55b-4847-e66d-2bd9d12563ed"
+                    ]
+                },
+                "currentHeight": 211,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "603abfc5-c514-4f4b-f853-2972d0b7700c",
+                    "resultId": "85c87bb1-f55b-4847-e66d-2bd9d12563ed",
+                    "rows": [
+                        {
+                            "0": "comments"
+                        },
+                        {
+                            "0": "follows"
+                        },
+                        {
+                            "0": "likes"
+                        },
+                        {
+                            "0": "photo_tags"
+                        },
+                        {
+                            "0": "photos"
+                        },
+                        {
+                            "0": "tags"
+                        },
+                        {
+                            "0": "users"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Tables_in_ig_clone",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 1.812ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SHOW TABLES"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 8,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "9b32846d-fc82-4ec7-d97f-fb8c0f022c3f"
+                    ]
+                },
+                "currentHeight": 169,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 53
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "603abfc5-c514-4f4b-f853-2972d0b7700c",
+                    "resultId": "9b32846d-fc82-4ec7-d97f-fb8c0f022c3f",
+                    "rows": [
+                        {
+                            "0": 11,
+                            "1": "Justina.Gaylord27",
+                            "2": "2017-05-04 16:32:16"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Travon.Waters",
+                            "2": "2017-04-30 13:26:14"
+                        },
+                        {
+                            "0": 85,
+                            "1": "Milford_Gleichner42",
+                            "2": "2017-04-30 07:50:51"
+                        },
+                        {
+                            "0": 19,
+                            "1": "Hailee26",
+                            "2": "2017-04-29 18:53:40"
+                        },
+                        {
+                            "0": 24,
+                            "1": "Maxwell.Halvorson",
+                            "2": "2017-04-18 02:32:44"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "created_at",
+                            "field": "2",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.365ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM users\nORDER BY created_at DESC\nLIMIT 5"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 9,
+                "end": 9,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}

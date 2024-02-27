@@ -2,7 +2,7 @@
     "type": "MySQLNotebook",
     "version": "1.0",
     "caption": "DB Notebook",
-    "content": "SHOW DATABASES;\nDROP DATABASE Ig_clone;\nCREATE DATABASE Ig_clone;\nUSE Ig_clone;\nSELECT DATABASE();\nCREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    username VARCHAR(255) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n)\nDESC users;\nCREATE TABLE photos (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    image_url VARCHAR(255) NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nINSERT INTO users (username) VALUES\n('BlueTheCat'),\n('CharlieBrown'),\n('ColtSteele');\nSELECT * FROM users;\nINSERT INTO photos (image_url, user_id) VALUES\n('/alskjd76', 1),\n('/alskjd98', 2),\n('/90jddlkj', 2),\n('233jddlkj', 3);\nSELECT * FROM photos, users;\n/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id;\nSHOW TABLES;\nSELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id;\nCREATE TABLE comments (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    comment_text VARCHAR(255) NOT NULL,\n    photo_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nDESC comments;\nCREATE TABLE likes (\n    user_id INTEGER NOT NULL,\n    photo_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    PRIMARY KEY(user_id, photo_id)\n);\nDESC likes;\nCREATE TABLE follows (\n    follower_id INTEGER NOT NULL,\n    followee_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(follower_id) REFERENCES users(id),\n    FOREIGN KEY(followee_id) REFERENCES users(id),\n    PRIMARY KEY(follower_id, followee_id)\n);\nDESC follows;\n",
+    "content": "SHOW DATABASES;\nDROP DATABASE Ig_clone;\nCREATE DATABASE Ig_clone;\nUSE Ig_clone;\nSELECT DATABASE();\nCREATE TABLE users (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    username VARCHAR(255) UNIQUE NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW()\n)\nDESC users;\nCREATE TABLE photos (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    image_url VARCHAR(255) NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nINSERT INTO users (username) VALUES\n('BlueTheCat'),\n('CharlieBrown'),\n('ColtSteele');\nSELECT * FROM users;\nINSERT INTO photos (image_url, user_id) VALUES\n('/alskjd76', 1),\n('/alskjd98', 2),\n('/90jddlkj', 2),\n('233jddlkj', 3);\nSELECT * FROM photos, users;\n/* SELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id;\nSHOW TABLES;\nSELECT photos.id, photos.image_url, users.username\nFROM photos\nJOIN users\n    ON photos.user_id = users.id\n    ORDER BY id;\nCREATE TABLE comments (\n    id INTEGER AUTO_INCREMENT PRIMARY KEY,\n    comment_text VARCHAR(255) NOT NULL,\n    photo_id INTEGER NOT NULL,\n    user_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    FOREIGN KEY(user_id) REFERENCES users(id)\n);\nDESC comments;\nCREATE TABLE likes (\n    user_id INTEGER NOT NULL,\n    photo_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(user_id) REFERENCES users(id),\n    FOREIGN KEY(photo_id) REFERENCES photos(id),\n    PRIMARY KEY(user_id, photo_id)\n);\nDESC likes;\nCREATE TABLE follows (\n    follower_id INTEGER NOT NULL,\n    followee_id INTEGER NOT NULL,\n    created_at TIMESTAMP DEFAULT NOW(),\n    FOREIGN KEY(follower_id) REFERENCES users(id),\n    FOREIGN KEY(followee_id) REFERENCES users(id),\n    PRIMARY KEY(follower_id, followee_id)\n);\nDESC follows;\nSELECT *FROM users;\n",
     "options": {
         "tabSize": 4,
         "insertSpaces": true,
@@ -15,11 +15,11 @@
             {
                 "inSelectionMode": false,
                 "selectionStart": {
-                    "lineNumber": 68,
+                    "lineNumber": 69,
                     "column": 1
                 },
                 "position": {
-                    "lineNumber": 68,
+                    "lineNumber": 69,
                     "column": 1
                 }
             }
@@ -27,10 +27,10 @@
         "viewState": {
             "scrollLeft": 0,
             "firstPosition": {
-                "lineNumber": 53,
+                "lineNumber": 68,
                 "column": 1
             },
-            "firstPositionDeltaTop": -18
+            "firstPositionDeltaTop": 111
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -46,10 +46,10 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "49d1ab38-139b-493f-c421-690e4a950a7b"
+                        "08f21f35-a2e6-4325-8d4f-de0327ecddc7"
                     ]
                 },
-                "currentHeight": 66.07272338867188,
+                "currentHeight": 36,
                 "statements": [
                     {
                         "delimiter": ";",
@@ -64,17 +64,20 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "49d1ab38-139b-493f-c421-690e4a950a7b",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "08f21f35-a2e6-4325-8d4f-de0327ecddc7",
                     "rows": [
                         {
                             "0": "Bookshop"
                         },
                         {
+                            "0": "bookstore"
+                        },
+                        {
                             "0": "GUADS"
                         },
                         {
-                            "0": "Ig_clone"
+                            "0": "IG_CLONE"
                         },
                         {
                             "0": "information_schema"
@@ -84,6 +87,9 @@
                         },
                         {
                             "0": "performance_schema"
+                        },
+                        {
+                            "0": "QAint"
                         },
                         {
                             "0": "school"
@@ -111,9 +117,9 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 11 records retrieved in 1.006ms"
+                        "text": "OK, 13 records retrieved in 2.062ms"
                     },
-                    "totalRowCount": 11,
+                    "totalRowCount": 13,
                     "hasMoreRows": false,
                     "currentPage": 0,
                     "index": 0,
@@ -132,20 +138,20 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "a1fbf163-bc7b-4f1f-c237-d7dd0519feda",
-                            "content": "OK, 2 rows affected in 11.24ms"
+                            "resultId": "c9fc0ee1-6c33-4959-d51b-de40f5e4be12",
+                            "content": "OK, 0 records retrieved in 2.562ms"
                         },
                         {
                             "type": 4,
                             "index": 1,
-                            "resultId": "d82a0e0e-3368-485d-d002-0cc8f1f08428",
-                            "content": "OK, 1 row affected in 3.623ms"
+                            "resultId": "9b8a0ecd-7543-41c5-9e70-08193716474a",
+                            "content": "OK, 1 row affected in 2.841ms"
                         },
                         {
                             "type": 4,
                             "index": 2,
-                            "resultId": "a1e2375d-bb0d-4bd5-8601-91e52ba22f43",
-                            "content": "OK, 0 records retrieved in 0.752ms"
+                            "resultId": "be86cc0b-5080-4f69-a5af-e44e7543f191",
+                            "content": "OK, 0 records retrieved in 1.592ms"
                         }
                     ]
                 },
@@ -190,7 +196,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "03cf7e67-4880-44c1-a45f-3dced941339a"
+                        "a0f34884-3ea1-4c0a-93a4-e4328c5d063e"
                     ]
                 },
                 "currentHeight": 36,
@@ -208,8 +214,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "03cf7e67-4880-44c1-a45f-3dced941339a",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "a0f34884-3ea1-4c0a-93a4-e4328c5d063e",
                     "rows": [
                         {
                             "0": "ig_clone"
@@ -225,7 +231,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 1 record retrieved in 0.801ms"
+                        "text": "OK, 1 record retrieved in 0.558ms"
                     },
                     "totalRowCount": 1,
                     "hasMoreRows": false,
@@ -246,8 +252,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "80769cb5-e545-4ee3-a909-017064b71326",
-                            "content": "OK, 0 records retrieved in 11.085ms"
+                            "resultId": "30ea2b8d-193b-49d7-dc38-7332ef0824f3",
+                            "content": "OK, 0 records retrieved in 10.843ms"
                         }
                     ]
                 },
@@ -274,7 +280,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "b37a61cb-1d3c-4639-add3-a73dd9b50ac1"
+                        "fc8fdc91-2be0-4c47-ce51-ed31478bd497"
                     ]
                 },
                 "currentHeight": 36,
@@ -292,8 +298,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "b37a61cb-1d3c-4639-add3-a73dd9b50ac1",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "fc8fdc91-2be0-4c47-ce51-ed31478bd497",
                     "rows": [
                         {
                             "0": "id",
@@ -365,7 +371,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 3 records retrieved in 2.313ms"
+                        "text": "OK, 3 records retrieved in 2.331ms"
                     },
                     "totalRowCount": 3,
                     "hasMoreRows": false,
@@ -386,8 +392,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "f83c1e3c-5957-4a9a-c2c3-7a551c377fdc",
-                            "content": "OK, 0 records retrieved in 10.551ms"
+                            "resultId": "9f74568b-2798-4925-fda1-bdd76179efda",
+                            "content": "OK, 0 records retrieved in 10.077ms"
                         }
                     ]
                 },
@@ -417,8 +423,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "587b0197-082b-4b02-abbd-0c8475befb1b",
-                            "content": "OK, 3 rows affected in 2.315ms"
+                            "resultId": "3ff7d99f-0163-4701-9354-3406c388ba2a",
+                            "content": "OK, 3 rows affected in 3.1ms"
                         }
                     ]
                 },
@@ -445,7 +451,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "516997c0-0831-41c9-ca50-a3eeec6663da"
+                        "ffa653c8-9100-4d77-b7de-20ec518f71c6"
                     ]
                 },
                 "currentHeight": 36,
@@ -463,23 +469,23 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "516997c0-0831-41c9-ca50-a3eeec6663da",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "ffa653c8-9100-4d77-b7de-20ec518f71c6",
                     "rows": [
                         {
                             "0": 1,
                             "1": "BlueTheCat",
-                            "2": "2023-12-11 22:57:32"
+                            "2": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 2,
                             "1": "CharlieBrown",
-                            "2": "2023-12-11 22:57:32"
+                            "2": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 3,
                             "1": "ColtSteele",
-                            "2": "2023-12-11 22:57:32"
+                            "2": "2024-02-26 22:51:10"
                         }
                     ],
                     "columns": [
@@ -506,7 +512,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 3 records retrieved in 0.562ms"
+                        "text": "OK, 3 records retrieved in 0.965ms"
                     },
                     "totalRowCount": 3,
                     "hasMoreRows": false,
@@ -527,8 +533,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "139b844e-8515-431b-f2e7-6e6d9972a1f2",
-                            "content": "OK, 4 rows affected in 2.214ms"
+                            "resultId": "572cfa0f-044a-48fa-a3c4-2709c631a59d",
+                            "content": "OK, 4 rows affected in 4.525ms"
                         }
                     ]
                 },
@@ -555,7 +561,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "38505682-296a-45a0-b012-60670849e28c"
+                        "49a2636b-4ed1-41ed-f0f6-e114fe0353f9"
                     ]
                 },
                 "currentHeight": 36,
@@ -573,116 +579,116 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "38505682-296a-45a0-b012-60670849e28c",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "49a2636b-4ed1-41ed-f0f6-e114fe0353f9",
                     "rows": [
                         {
                             "0": 1,
                             "1": "/alskjd76",
                             "2": 1,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 3,
                             "5": "ColtSteele",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 1,
                             "1": "/alskjd76",
                             "2": 1,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 2,
                             "5": "CharlieBrown",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 1,
                             "1": "/alskjd76",
                             "2": 1,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 1,
                             "5": "BlueTheCat",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 2,
                             "1": "/alskjd98",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 3,
                             "5": "ColtSteele",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 2,
                             "1": "/alskjd98",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 2,
                             "5": "CharlieBrown",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 2,
                             "1": "/alskjd98",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 1,
                             "5": "BlueTheCat",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 3,
                             "1": "/90jddlkj",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 3,
                             "5": "ColtSteele",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 3,
                             "1": "/90jddlkj",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 2,
                             "5": "CharlieBrown",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 3,
                             "1": "/90jddlkj",
                             "2": 2,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 1,
                             "5": "BlueTheCat",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 4,
                             "1": "233jddlkj",
                             "2": 3,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 3,
                             "5": "ColtSteele",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 4,
                             "1": "233jddlkj",
                             "2": 3,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 2,
                             "5": "CharlieBrown",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         },
                         {
                             "0": 4,
                             "1": "233jddlkj",
                             "2": 3,
-                            "3": "2023-12-11 22:57:33",
+                            "3": "2024-02-26 22:51:11",
                             "4": 1,
                             "5": "BlueTheCat",
-                            "6": "2023-12-11 22:57:32"
+                            "6": "2024-02-26 22:51:10"
                         }
                     ],
                     "columns": [
@@ -737,7 +743,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 12 records retrieved in 0.647ms"
+                        "text": "OK, 12 records retrieved in 0.762ms"
                     },
                     "totalRowCount": 12,
                     "hasMoreRows": false,
@@ -789,7 +795,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "9d12e568-8e00-4b10-aa29-6a0b7e283aec"
+                        "48ddc3c5-0e21-446f-fafa-43441afa943f"
                     ]
                 },
                 "currentHeight": 36,
@@ -807,8 +813,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "9d12e568-8e00-4b10-aa29-6a0b7e283aec",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "48ddc3c5-0e21-446f-fafa-43441afa943f",
                     "rows": [
                         {
                             "0": "photos"
@@ -827,7 +833,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 2 records retrieved in 1.265ms"
+                        "text": "OK, 2 records retrieved in 1.854ms"
                     },
                     "totalRowCount": 2,
                     "hasMoreRows": false,
@@ -845,10 +851,10 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "641febe2-0b6a-453c-957c-0ded728a1208"
+                        "1b6062c8-f311-4983-a96b-0b70ed4d22a7"
                     ]
                 },
-                "currentHeight": 167.04486083984375,
+                "currentHeight": 36,
                 "statements": [
                     {
                         "delimiter": ";",
@@ -863,8 +869,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "641febe2-0b6a-453c-957c-0ded728a1208",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "1b6062c8-f311-4983-a96b-0b70ed4d22a7",
                     "rows": [
                         {
                             "0": 1,
@@ -911,7 +917,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 4 records retrieved in 0.766ms"
+                        "text": "OK, 4 records retrieved in 1.251ms"
                     },
                     "totalRowCount": 4,
                     "hasMoreRows": false,
@@ -932,8 +938,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "6bcbd9fd-e602-4910-b7ad-8f9a85f3c7de",
-                            "content": "OK, 0 records retrieved in 22.671ms"
+                            "resultId": "97139e24-494e-4d71-dcc3-93a9db276c5a",
+                            "content": "OK, 0 records retrieved in 19.453ms"
                         }
                     ]
                 },
@@ -960,7 +966,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "eb78f9d4-12a4-410a-ceb3-4c6cd7a17b51"
+                        "b8384f12-8cd9-4918-f503-2ac8d9eb578c"
                     ]
                 },
                 "currentHeight": 36,
@@ -978,8 +984,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "eb78f9d4-12a4-410a-ceb3-4c6cd7a17b51",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "b8384f12-8cd9-4918-f503-2ac8d9eb578c",
                     "rows": [
                         {
                             "0": "id",
@@ -1067,7 +1073,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 5 records retrieved in 5ms"
+                        "text": "OK, 5 records retrieved in 2.279ms"
                     },
                     "totalRowCount": 5,
                     "hasMoreRows": false,
@@ -1088,8 +1094,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "39a64b21-ff72-47e5-e96b-9ead245b4d20",
-                            "content": "OK, 0 records retrieved in 16.032ms"
+                            "resultId": "fbd32d19-2135-4c55-bfe7-0fa61ad8c55c",
+                            "content": "OK, 0 records retrieved in 15.054ms"
                         }
                     ]
                 },
@@ -1116,10 +1122,10 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "78508472-f438-41a3-c1b2-975b4904ed68"
+                        "dee325a3-0c9d-4f99-e37d-302e8c6f25b2"
                     ]
                 },
-                "currentHeight": 127,
+                "currentHeight": 36,
                 "statements": [
                     {
                         "delimiter": ";",
@@ -1134,8 +1140,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "78508472-f438-41a3-c1b2-975b4904ed68",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "dee325a3-0c9d-4f99-e37d-302e8c6f25b2",
                     "rows": [
                         {
                             "0": "user_id",
@@ -1207,7 +1213,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 3 records retrieved in 1.878ms"
+                        "text": "OK, 3 records retrieved in 3.114ms"
                     },
                     "totalRowCount": 3,
                     "hasMoreRows": false,
@@ -1228,8 +1234,8 @@
                         {
                             "type": 4,
                             "index": 0,
-                            "resultId": "d22944a4-5ae9-4c23-c38d-447a9d08cca1",
-                            "content": "OK, 0 records retrieved in 16.247ms"
+                            "resultId": "fcbed3d1-75fe-49fb-fdfb-350136875b9e",
+                            "content": "OK, 0 records retrieved in 15.575ms"
                         }
                     ]
                 },
@@ -1256,7 +1262,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "2ff4aeda-4c00-4df3-da55-a39a9992238c"
+                        "78536b9e-f176-47ac-d9ee-2fb1445f32fc"
                     ]
                 },
                 "currentHeight": 127,
@@ -1274,8 +1280,8 @@
             },
             "data": [
                 {
-                    "tabId": "25340bcb-35c8-44c0-dc22-93996163f2c7",
-                    "resultId": "2ff4aeda-4c00-4df3-da55-a39a9992238c",
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "78536b9e-f176-47ac-d9ee-2fb1445f32fc",
                     "rows": [
                         {
                             "0": "follower_id",
@@ -1347,7 +1353,7 @@
                         }
                     ],
                     "executionInfo": {
-                        "text": "OK, 3 records retrieved in 2.192ms"
+                        "text": "OK, 3 records retrieved in 2.249ms"
                     },
                     "totalRowCount": 3,
                     "hasMoreRows": false,
@@ -1361,6 +1367,570 @@
             "state": {
                 "start": 68,
                 "end": 68,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "104ed2d7-0b5d-41aa-81c1-b6afa5fe3dca"
+                    ]
+                },
+                "currentHeight": 352,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 19
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "52ae8b7d-3cdf-4907-efe3-0a36693bd19e",
+                    "resultId": "104ed2d7-0b5d-41aa-81c1-b6afa5fe3dca",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "Kenton_Kirlin",
+                            "2": "2017-02-16 18:22:11"
+                        },
+                        {
+                            "0": 2,
+                            "1": "Andre_Purdy85",
+                            "2": "2017-04-02 17:11:21"
+                        },
+                        {
+                            "0": 3,
+                            "1": "Harley_Lind18",
+                            "2": "2017-02-21 11:12:33"
+                        },
+                        {
+                            "0": 4,
+                            "1": "Arely_Bogan63",
+                            "2": "2016-08-13 01:28:43"
+                        },
+                        {
+                            "0": 5,
+                            "1": "Aniya_Hackett",
+                            "2": "2016-12-07 01:04:39"
+                        },
+                        {
+                            "0": 6,
+                            "1": "Travon.Waters",
+                            "2": "2017-04-30 13:26:14"
+                        },
+                        {
+                            "0": 7,
+                            "1": "Kasandra_Homenick",
+                            "2": "2016-12-12 06:50:08"
+                        },
+                        {
+                            "0": 8,
+                            "1": "Tabitha_Schamberger11",
+                            "2": "2016-08-20 02:19:46"
+                        },
+                        {
+                            "0": 9,
+                            "1": "Gus93",
+                            "2": "2016-06-24 19:36:31"
+                        },
+                        {
+                            "0": 10,
+                            "1": "Presley_McClure",
+                            "2": "2016-08-07 16:25:49"
+                        },
+                        {
+                            "0": 11,
+                            "1": "Justina.Gaylord27",
+                            "2": "2017-05-04 16:32:16"
+                        },
+                        {
+                            "0": 12,
+                            "1": "Dereck65",
+                            "2": "2017-01-19 01:34:14"
+                        },
+                        {
+                            "0": 13,
+                            "1": "Alexandro35",
+                            "2": "2017-03-29 17:09:02"
+                        },
+                        {
+                            "0": 14,
+                            "1": "Jaclyn81",
+                            "2": "2017-02-06 23:29:16"
+                        },
+                        {
+                            "0": 15,
+                            "1": "Billy52",
+                            "2": "2016-10-05 14:10:20"
+                        },
+                        {
+                            "0": 16,
+                            "1": "Annalise.McKenzie16",
+                            "2": "2016-08-02 21:32:46"
+                        },
+                        {
+                            "0": 17,
+                            "1": "Norbert_Carroll35",
+                            "2": "2017-02-06 22:05:43"
+                        },
+                        {
+                            "0": 18,
+                            "1": "Odessa2",
+                            "2": "2016-10-21 18:16:56"
+                        },
+                        {
+                            "0": 19,
+                            "1": "Hailee26",
+                            "2": "2017-04-29 18:53:40"
+                        },
+                        {
+                            "0": 20,
+                            "1": "Delpha.Kihn",
+                            "2": "2016-08-31 02:42:30"
+                        },
+                        {
+                            "0": 21,
+                            "1": "Rocio33",
+                            "2": "2017-01-23 11:51:15"
+                        },
+                        {
+                            "0": 22,
+                            "1": "Kenneth64",
+                            "2": "2016-12-27 09:48:17"
+                        },
+                        {
+                            "0": 23,
+                            "1": "Eveline95",
+                            "2": "2017-01-23 23:14:19"
+                        },
+                        {
+                            "0": 24,
+                            "1": "Maxwell.Halvorson",
+                            "2": "2017-04-18 02:32:44"
+                        },
+                        {
+                            "0": 25,
+                            "1": "Tierra.Trantow",
+                            "2": "2016-10-03 12:49:21"
+                        },
+                        {
+                            "0": 26,
+                            "1": "Josianne.Friesen",
+                            "2": "2016-06-07 12:47:01"
+                        },
+                        {
+                            "0": 27,
+                            "1": "Darwin29",
+                            "2": "2017-03-18 03:10:07"
+                        },
+                        {
+                            "0": 28,
+                            "1": "Dario77",
+                            "2": "2016-08-18 07:15:03"
+                        },
+                        {
+                            "0": 29,
+                            "1": "Jaime53",
+                            "2": "2016-09-11 18:51:57"
+                        },
+                        {
+                            "0": 30,
+                            "1": "Kaley9",
+                            "2": "2016-09-23 21:24:20"
+                        },
+                        {
+                            "0": 31,
+                            "1": "Aiyana_Hoeger",
+                            "2": "2016-09-29 20:28:12"
+                        },
+                        {
+                            "0": 32,
+                            "1": "Irwin.Larson",
+                            "2": "2016-08-26 19:36:22"
+                        },
+                        {
+                            "0": 33,
+                            "1": "Yvette.Gottlieb91",
+                            "2": "2016-11-14 12:32:01"
+                        },
+                        {
+                            "0": 34,
+                            "1": "Pearl7",
+                            "2": "2016-07-08 21:42:01"
+                        },
+                        {
+                            "0": 35,
+                            "1": "Lennie_Hartmann40",
+                            "2": "2017-03-30 03:25:22"
+                        },
+                        {
+                            "0": 36,
+                            "1": "Ollie_Ledner37",
+                            "2": "2016-08-04 15:42:20"
+                        },
+                        {
+                            "0": 37,
+                            "1": "Yazmin_Mills95",
+                            "2": "2016-07-27 00:56:44"
+                        },
+                        {
+                            "0": 38,
+                            "1": "Jordyn.Jacobson2",
+                            "2": "2016-05-14 07:56:26"
+                        },
+                        {
+                            "0": 39,
+                            "1": "Kelsi26",
+                            "2": "2016-06-08 17:48:08"
+                        },
+                        {
+                            "0": 40,
+                            "1": "Rafael.Hickle2",
+                            "2": "2016-05-19 09:51:26"
+                        },
+                        {
+                            "0": 41,
+                            "1": "Mckenna17",
+                            "2": "2016-07-17 17:25:45"
+                        },
+                        {
+                            "0": 42,
+                            "1": "Maya.Farrell",
+                            "2": "2016-12-11 18:04:45"
+                        },
+                        {
+                            "0": 43,
+                            "1": "Janet.Armstrong",
+                            "2": "2016-10-06 07:57:44"
+                        },
+                        {
+                            "0": 44,
+                            "1": "Seth46",
+                            "2": "2016-07-07 11:40:27"
+                        },
+                        {
+                            "0": 45,
+                            "1": "David.Osinski47",
+                            "2": "2017-02-05 21:23:37"
+                        },
+                        {
+                            "0": 46,
+                            "1": "Malinda_Streich",
+                            "2": "2016-07-09 21:37:08"
+                        },
+                        {
+                            "0": 47,
+                            "1": "Harrison.Beatty50",
+                            "2": "2016-09-02 03:48:38"
+                        },
+                        {
+                            "0": 48,
+                            "1": "Granville_Kutch",
+                            "2": "2016-06-26 03:10:22"
+                        },
+                        {
+                            "0": 49,
+                            "1": "Morgan.Kassulke",
+                            "2": "2016-10-30 12:42:31"
+                        },
+                        {
+                            "0": 50,
+                            "1": "Gerard79",
+                            "2": "2016-08-23 19:47:44"
+                        },
+                        {
+                            "0": 51,
+                            "1": "Mariano_Koch3",
+                            "2": "2017-04-17 14:14:46"
+                        },
+                        {
+                            "0": 52,
+                            "1": "Zack_Kemmer93",
+                            "2": "2017-01-01 05:58:22"
+                        },
+                        {
+                            "0": 53,
+                            "1": "Linnea59",
+                            "2": "2017-02-07 07:49:34"
+                        },
+                        {
+                            "0": 54,
+                            "1": "Duane60",
+                            "2": "2016-12-21 04:43:38"
+                        },
+                        {
+                            "0": 55,
+                            "1": "Meggie_Doyle",
+                            "2": "2017-04-04 12:17:34"
+                        },
+                        {
+                            "0": 56,
+                            "1": "Peter.Stehr0",
+                            "2": "2016-08-22 18:05:42"
+                        },
+                        {
+                            "0": 57,
+                            "1": "Julien_Schmidt",
+                            "2": "2017-02-02 23:12:48"
+                        },
+                        {
+                            "0": 58,
+                            "1": "Aurelie71",
+                            "2": "2016-05-31 06:20:57"
+                        },
+                        {
+                            "0": 59,
+                            "1": "Cesar93",
+                            "2": "2016-10-18 16:42:43"
+                        },
+                        {
+                            "0": 60,
+                            "1": "Sam52",
+                            "2": "2017-03-30 22:03:45"
+                        },
+                        {
+                            "0": 61,
+                            "1": "Jayson65",
+                            "2": "2016-10-14 19:10:53"
+                        },
+                        {
+                            "0": 62,
+                            "1": "Ressie_Stanton46",
+                            "2": "2016-12-20 15:09:09"
+                        },
+                        {
+                            "0": 63,
+                            "1": "Elenor88",
+                            "2": "2016-05-08 01:30:41"
+                        },
+                        {
+                            "0": 64,
+                            "1": "Florence99",
+                            "2": "2016-10-06 23:08:31"
+                        },
+                        {
+                            "0": 65,
+                            "1": "Adelle96",
+                            "2": "2016-10-01 00:37:57"
+                        },
+                        {
+                            "0": 66,
+                            "1": "Mike.Auer39",
+                            "2": "2016-07-01 17:36:15"
+                        },
+                        {
+                            "0": 67,
+                            "1": "Emilio_Bernier52",
+                            "2": "2016-05-06 13:04:30"
+                        },
+                        {
+                            "0": 68,
+                            "1": "Franco_Keebler64",
+                            "2": "2016-11-13 20:09:27"
+                        },
+                        {
+                            "0": 69,
+                            "1": "Karley_Bosco",
+                            "2": "2016-06-24 23:38:52"
+                        },
+                        {
+                            "0": 70,
+                            "1": "Erick5",
+                            "2": "2017-04-05 23:44:47"
+                        },
+                        {
+                            "0": 71,
+                            "1": "Nia_Haag",
+                            "2": "2016-05-14 15:38:50"
+                        },
+                        {
+                            "0": 72,
+                            "1": "Kathryn80",
+                            "2": "2016-10-11 09:01:57"
+                        },
+                        {
+                            "0": 73,
+                            "1": "Jaylan.Lakin",
+                            "2": "2016-06-10 23:58:52"
+                        },
+                        {
+                            "0": 74,
+                            "1": "Hulda.Macejkovic",
+                            "2": "2017-01-25 17:17:28"
+                        },
+                        {
+                            "0": 75,
+                            "1": "Leslie67",
+                            "2": "2016-09-21 05:14:01"
+                        },
+                        {
+                            "0": 76,
+                            "1": "Janelle.Nikolaus81",
+                            "2": "2016-07-21 09:26:09"
+                        },
+                        {
+                            "0": 77,
+                            "1": "Donald.Fritsch",
+                            "2": "2017-01-07 10:05:41"
+                        },
+                        {
+                            "0": 78,
+                            "1": "Colten.Harris76",
+                            "2": "2016-10-10 02:38:53"
+                        },
+                        {
+                            "0": 79,
+                            "1": "Katarina.Dibbert",
+                            "2": "2016-11-03 13:14:11"
+                        },
+                        {
+                            "0": 80,
+                            "1": "Darby_Herzog",
+                            "2": "2016-05-06 00:14:21"
+                        },
+                        {
+                            "0": 81,
+                            "1": "Esther.Zulauf61",
+                            "2": "2017-01-14 17:02:34"
+                        },
+                        {
+                            "0": 82,
+                            "1": "Aracely.Johnston98",
+                            "2": "2016-07-25 18:49:10"
+                        },
+                        {
+                            "0": 83,
+                            "1": "Bartholome.Bernhard",
+                            "2": "2016-11-06 02:31:23"
+                        },
+                        {
+                            "0": 84,
+                            "1": "Alysa22",
+                            "2": "2017-01-01 17:44:43"
+                        },
+                        {
+                            "0": 85,
+                            "1": "Milford_Gleichner42",
+                            "2": "2017-04-30 07:50:51"
+                        },
+                        {
+                            "0": 86,
+                            "1": "Delfina_VonRueden68",
+                            "2": "2017-03-21 12:02:14"
+                        },
+                        {
+                            "0": 87,
+                            "1": "Rick29",
+                            "2": "2017-02-24 11:25:08"
+                        },
+                        {
+                            "0": 88,
+                            "1": "Clint27",
+                            "2": "2016-06-02 21:40:10"
+                        },
+                        {
+                            "0": 89,
+                            "1": "Jessyca_West",
+                            "2": "2016-09-14 23:47:05"
+                        },
+                        {
+                            "0": 90,
+                            "1": "Esmeralda.Mraz57",
+                            "2": "2017-03-03 11:52:27"
+                        },
+                        {
+                            "0": 91,
+                            "1": "Bethany20",
+                            "2": "2016-06-03 23:31:53"
+                        },
+                        {
+                            "0": 92,
+                            "1": "Frederik_Rice",
+                            "2": "2016-07-06 21:56:29"
+                        },
+                        {
+                            "0": 93,
+                            "1": "Willie_Leuschke",
+                            "2": "2017-02-15 01:40:53"
+                        },
+                        {
+                            "0": 94,
+                            "1": "Damon35",
+                            "2": "2016-10-31 14:44:27"
+                        },
+                        {
+                            "0": 95,
+                            "1": "Nicole71",
+                            "2": "2016-05-09 17:30:22"
+                        },
+                        {
+                            "0": 96,
+                            "1": "Keenan.Schamberger60",
+                            "2": "2016-08-28 14:57:28"
+                        },
+                        {
+                            "0": 97,
+                            "1": "Tomas.Beatty93",
+                            "2": "2017-02-11 11:38:55"
+                        },
+                        {
+                            "0": 98,
+                            "1": "Imani_Nicolas17",
+                            "2": "2017-01-31 22:59:34"
+                        },
+                        {
+                            "0": 99,
+                            "1": "Alek_Watsica",
+                            "2": "2016-12-10 07:43:58"
+                        },
+                        {
+                            "0": 100,
+                            "1": "Javonte83",
+                            "2": "2017-03-27 22:06:37"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "username",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "created_at",
+                            "field": "2",
+                            "dataType": {
+                                "type": 26
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 100 records retrieved in 0.833ms"
+                    },
+                    "totalRowCount": 100,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT *FROM users"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 69,
+                "end": 69,
                 "language": "mysql",
                 "currentHeight": 180,
                 "statements": [
